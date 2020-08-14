@@ -1,0 +1,21 @@
+:: 买办
+\<<if $manIdentity.includes("买办")>>
+\	<<link "不是买办">>
+\		<<run $manIdentity.delete("买办")>><<refresh>>
+\	<</link>>
+\<<else>>
+\	<<link "是买办">>
+\		<<run $manIdentity.pushUnique("买办")>><<refresh>>
+\	<</link>>
+\<</if>>
+
+:: 洋教徒
+\<<if $manIdentity.includes("洋教徒")>>
+\	<<link "不是洋教徒">>
+\		<<run $manIdentity.delete("洋教徒")>><<refresh>>
+\	<</link>>
+\<<else>>
+\	<<link "是洋教徒">>
+\		<<run $manIdentity.pushUnique("洋教徒")>><<refresh>>
+\	<</link>>
+\<</if>>
