@@ -1,0 +1,53 @@
+:: Start
+<!--刷新功能-->
+  <<widget "refresh">><<silently>>\	/*初始化*/
+	<<if $manIdentity.first() eq "">>
+		<<run $manIdentity.pushUnique("???")>>
+	<<elseif $manIdentity.last() neq "???">>
+		<<run $manIdentity.delete("???")>>
+	<</if>>
+
+	/*更新侧边栏*/
+	<<replace "#story-caption">><<include "StoryCaption">><</replace>>
+	<<replace "#江湖手册">><<include "江湖手册">><</replace>>
+  <</silently>><</widget>>  
+
+
+:: StoryData
+{
+    "ifid": "D56A0595-E867-4566-8F20-6CE8C6492E58",
+    "format": "sugarcube-2",
+    "format-version": "2.33.1",
+    "start": "StoryInit"
+}
+
+:: StoryTitle
+LackCondolence
+
+:: StoryMenu
+<<link '试探'>>
+	<<append "#lowCase">><<include "试探">><</append>>
+<</link>> 
+<<link '质问'>>
+	<<append "#lowCase">><<include "试探">><</append>>
+<</link>> 
+<<link '恫吓'>>
+	<<append "#lowCase">><<include "试探">><</append>>
+<</link>> 
+<<link '恭维'>>
+	<<append "#lowCase">><<include "试探">><</append>>
+<</link>> 
+<<link '坦言'>>
+	<<append "#lowCase">><<include "试探">><</append>>
+<</link>> 
+
+:: StoryCaption
+姓名：$manName
+年龄：$manAge
+身份：$manIdentity
+担忧：$manFear
+
+:: PassageFooter
+
+
+<<include "江湖手册">>
