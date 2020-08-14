@@ -1,4 +1,4 @@
-:: sotryInit
+:: ForInit
 <<set $openWindow to false>>
 <<include "马五爷">>
 
