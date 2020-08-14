@@ -10,15 +10,16 @@
 	/*更新侧边栏*/
 	<<replace "#story-caption">><<include "StoryCaption">><</replace>>
 	<<replace "#江湖手册">><<include "江湖手册">><</replace>>
-  <</silently>><</widget>>  
+  <</silently>><</widget>> 
+  <<include "马五爷">> 
 
 
 :: StoryData
 {
     "ifid": "D56A0595-E867-4566-8F20-6CE8C6492E58",
-    "format": "sugarcube",
+    "format": "SugarCube",
     "format-version": "2.33.1",
-    "start": "StoryInit"
+    "start": "Start"
 }
 
 :: StoryTitle
