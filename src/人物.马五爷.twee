@@ -5,6 +5,7 @@
 <<set $manFear to []>><<run $manFear.push("???")>>
 <</nobr>>\
 一个身穿黑色丝绸大褂的男人坐在你面前。
+测试一下~
 <<linkreplace "继续" t8n>>\
 察言观色：你一眼就看见了他胸前的银色十字架。
 <<linkreplace "继续" t8n>>\
