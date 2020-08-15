@@ -19,16 +19,14 @@
     "ifid": "D56A0595-E867-4566-8F20-6CE8C6492E58",
     "format": "SugarCube",
     "format-version": "2.33.1",
-    "start": "Start"
+    "start": "马五爷"
 }
 
 :: StoryTitle
 LackCondolence
 
 :: StoryMenu
-<<link '试探'>>
-	<<append "#lowCase">><<include "试探">><</append>>
-<</link>> 
+[[人物技能|技能面板]]
 <<link '质问'>>
 	<<append "#lowCase">><<include "试探">><</append>>
 <</link>> 
