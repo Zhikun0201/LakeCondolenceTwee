@@ -1,14 +1,60 @@
 :: 技能面板
-你的技能：
-　　　　　　　　　　 　通情达理
-　　　　　　　　　　　　　＾
-　　　　　　　　　　　　　＋
-　　　　　　　　　　　　　＋
-　　　　　　　　　　　　　＋
-　神机妙算＜　＋　＋　＋　ｏ　＋　＋　＋　＞察言观色
-　　　　　　　　　　　　　＋
-　　　　　　　　　　　　　＋
-　　　　　　　　　　　　　＋
-　　　　　　　　　　　　　ｖ
-　　　　　　　　　　　 博学多闻
+你的技能点：<span id="skillPoint">$skillPoint</span>
+神机妙算：<span id="SJMS">$SJMS</span> <<link "[+]">><<SJMS>><</link>> <<link "[-]">><<dSJMS>><</link>>
+察言观色：<span id="CYGS">$CYGS</span> <<link "[+]">><<CYGS>><</link>> <<link "[-]">><<dCYGS>><</link>>
+通情达理：<span id="TQDL">$TQDL</span> <<link "[+]">><<TQDL>><</link>> <<link "[-]">><<dTQDL>><</link>>
+博学多闻：<span id="BXDW">$BXDW</span> <<link "[+]">><<BXDW>><</link>> <<link "[-]">><<dBXDW>><</link>>
 
+<<nobr>>
+<<widget SJMS>>
+    <<set $SJMS++ >>
+    <<set $skillPoint-- >>
+    <<replace "#skillPoint">>$skillPoint<</replace>>
+    <<replace "#SJMS">>$SJMS<</replace>>
+<</widget>>
+<<widget dSJMS>>
+    <<set $SJMS-- >>
+    <<set $skillPoint++ >>
+    <<replace "#skillPoint">>$skillPoint<</replace>>
+    <<replace "#SJMS">>$SJMS<</replace>>
+<</widget>>
+
+<<widget CYGS>>
+    <<set $CYGS++ >>
+    <<set $skillPoint-- >>
+    <<replace "#skillPoint">>$skillPoint<</replace>>
+    <<replace "#CYGS">>$CYGS<</replace>>
+<</widget>>
+<<widget dCYGS>>
+    <<set $CYGS-- >>
+    <<set $skillPoint++ >>
+    <<replace "#skillPoint">>$skillPoint<</replace>>
+    <<replace "#CYGS">>$CYGS<</replace>>
+<</widget>>
+
+<<widget TQDL>>
+    <<set $TQDL++ >>
+    <<set $skillPoint-- >>
+    <<replace "#skillPoint">>$skillPoint<</replace>>
+    <<replace "#TQDL">>$TQDL<</replace>>
+<</widget>>
+<<widget dTQDL>>
+    <<set $TQDL-- >>
+    <<set $skillPoint++ >>
+    <<replace "#skillPoint">>$skillPoint<</replace>>
+    <<replace "#TQDL">>$TQDL<</replace>>
+<</widget>>
+
+<<widget BXDW>>
+    <<set $BXDW++ >>
+    <<set $skillPoint-- >>
+    <<replace "#skillPoint">>$skillPoint<</replace>>
+    <<replace "#BXDW">>$BXDW<</replace>>
+<</widget>>
+<<widget dCYGS>>
+    <<set $CYGS-- >>
+    <<set $skillPoint++ >>
+    <<replace "#skillPoint">>$skillPoint<</replace>>
+    <<replace "#CYGS">>$CYGS<</replace>>
+<</widget>>
+<</nobr>>

@@ -3,23 +3,31 @@
     "ifid": "D56A0595-E867-4566-8F20-6CE8C6492E58",
     "format": "SugarCube",
     "format-version": "2.33.1",
-    "start": "马五爷"
+    "start": "Start"
 }
 
 :: Start
+<<include "马五爷">>
 <!--刷新功能-->
-  <<widget "refresh">><<silently>>\	/*初始化*/
+<<widget "refresh">><<silently>>
+	/*初始化*/
 	<<if $manIdentity.first() eq "">>
 		<<run $manIdentity.pushUnique("???")>>
 	<<elseif $manIdentity.last() neq "???">>
 		<<run $manIdentity.delete("???")>>
 	<</if>>
-
+	
 	/*更新侧边栏*/
 	<<replace "#story-caption">><<include "StoryCaption">><</replace>>
 	<<replace "#江湖手册">><<include "江湖手册">><</replace>>
-  <</silently>><</widget>> 
-  <<include "Start">> 
+<</silently>><</widget>>
+
+<!--技能点初始化-->
+<<set $skillPoint to 10>>
+<<set $SJMS to 0>>
+<<set $CYGS to 0>>
+<<set $TQDL to 0>>
+<<set $BXDW to 0>>
 
 :: StoryTitle
 LackCondolence
