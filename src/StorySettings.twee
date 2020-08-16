@@ -29,6 +29,61 @@
 <<set $TQDL to 0>>
 <<set $BXDW to 0>>
 
+<!--技能点操作-->
+<<nobr>>
+<<widget SJMS>>
+    <<set $SJMS++ >>
+    <<set $skillPoint-- >>
+    <<replace "#skillPoint">>$skillPoint<</replace>>
+    <<replace "#SJMS">>$SJMS<</replace>>
+<</widget>>
+<<widget dSJMS>>
+    <<set $SJMS-- >>
+    <<set $skillPoint++ >>
+    <<replace "#skillPoint">>$skillPoint<</replace>>
+    <<replace "#SJMS">>$SJMS<</replace>>
+<</widget>>
+
+<<widget CYGS>>
+    <<set $CYGS++ >>
+    <<set $skillPoint-- >>
+    <<replace "#skillPoint">>$skillPoint<</replace>>
+    <<replace "#CYGS">>$CYGS<</replace>>
+<</widget>>
+<<widget dCYGS>>
+    <<set $CYGS-- >>
+    <<set $skillPoint++ >>
+    <<replace "#skillPoint">>$skillPoint<</replace>>
+    <<replace "#CYGS">>$CYGS<</replace>>
+<</widget>>
+
+<<widget TQDL>>
+    <<set $TQDL++ >>
+    <<set $skillPoint-- >>
+    <<replace "#skillPoint">>$skillPoint<</replace>>
+    <<replace "#TQDL">>$TQDL<</replace>>
+<</widget>>
+<<widget dTQDL>>
+    <<set $TQDL-- >>
+    <<set $skillPoint++ >>
+    <<replace "#skillPoint">>$skillPoint<</replace>>
+    <<replace "#TQDL">>$TQDL<</replace>>
+<</widget>>
+
+<<widget BXDW>>
+    <<set $BXDW++ >>
+    <<set $skillPoint-- >>
+    <<replace "#skillPoint">>$skillPoint<</replace>>
+    <<replace "#BXDW">>$BXDW<</replace>>
+<</widget>>
+<<widget dCYGS>>
+    <<set $CYGS-- >>
+    <<set $skillPoint++ >>
+    <<replace "#skillPoint">>$skillPoint<</replace>>
+    <<replace "#CYGS">>$CYGS<</replace>>
+<</widget>>
+<</nobr>>
+
 :: StoryTitle
 LackCondolence
 
