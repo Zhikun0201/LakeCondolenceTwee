@@ -1,1 +1,0 @@
-tweego -o LC-test.html "D:\Project Files\LakeCondolenceTwee\src" --test --watch

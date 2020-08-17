@@ -1,0 +1,1 @@
+tweego -o LC-test.html "..\src" --test --watch
