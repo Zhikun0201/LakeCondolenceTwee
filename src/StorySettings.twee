@@ -7,6 +7,7 @@
 }
 
 :: Start
+试试Action会不会自动打包~
 <<include "马五爷">>
 <!--刷新功能-->
 <<widget "refresh">><<silently>>
@@ -76,11 +77,11 @@
     <<replace "#skillPoint">>$skillPoint<</replace>>
     <<replace "#BXDW">>$BXDW<</replace>>
 <</widget>>
-<<widget dCYGS>>
-    <<set $CYGS-- >>
+<<widget dBXDW>>
+    <<set $BXDW-- >>
     <<set $skillPoint++ >>
     <<replace "#skillPoint">>$skillPoint<</replace>>
-    <<replace "#CYGS">>$CYGS<</replace>>
+    <<replace "#BXDW">>$BXDW<</replace>>
 <</widget>>
 <</nobr>>
 
