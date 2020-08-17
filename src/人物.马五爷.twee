@@ -1,26 +1,18 @@
-:: 马五爷
+:: 第一章 - 初始化
 <<nobr>>\
 <<set $manName to "马五爷", $manAge to "???">>
 <<set $manIdentity to []>><<run $manIdentity.push("???")>>
 <<set $manFear to []>><<run $manFear.push("???")>>
 <</nobr>>\
-一个身穿黑色丝绸大褂的男人坐在你面前。
-<<linkreplace "继续" t8n>>\
-察言观色：你一眼就看见了他胸前的银色十字架。
-<<linkreplace "继续" t8n>>\
-\<<if $itemCross is 1>>\
-和你的那枚十字架一模一样。
-\<<elseif $knowledge is 1>>\
-博学多闻：这是和洋人关系好的人才会戴的坠子，用银子造的。
-\<<elseif $knowledge is 2>>\
-博学多闻：这是信教的人的象征。他们用这种东西来证明自己的身份。
-\<<elseif $knowledge is 3>>\
-博学多闻：这是信教的人的象征。他们用这种东西来证明自己的身份。
-\<<else>>\
-博学多闻：惨了，你什么也看不出来。
-\<</if>>
-<<linkreplace "继续" t8n>>
-\<</linkreplace>>
-\<</linkreplace>>
-\<</linkreplace>>
-\<span id="lowCase"></span>
+
+[[第一章 - 开始|CH1]]
+
+:: CH1
+$天人感应 - 秋天开始了。
+<<linkreplace "嗯哼？">>
+    你 - 是吗？
+    <<linkreplace "继续">>
+        天人感应 - 当然是，你有什么问题？你忘了你早上踩到的那个西瓜皮吗？每个人都在吃西瓜！只有你，你踩着一块西瓜皮摔到了茅房旁边，沾了一脸的屎，还半天找不到水洗干净。
+    <</linkreplace>>
+<</linkreplace>>
+<<linkreplace "what?">>新测试<</linkreplace>>

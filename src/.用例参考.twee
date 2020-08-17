@@ -1,0 +1,8 @@
+:: Templates
+
+<!--海盗-->
+<<script>>
+Template.add('pirate', function () {
+  return "Hello, me hardy!";
+});
+<</script>>

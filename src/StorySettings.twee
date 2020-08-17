@@ -7,8 +7,6 @@
 }
 
 :: Start
-试试Action会不会自动打包~
-<<include "马五爷">>
 <!--刷新功能-->
 <<widget "refresh">><<silently>>
 	/*初始化*/
@@ -22,6 +20,7 @@
 	<<replace "#story-caption">><<include "StoryCaption">><</replace>>
 	<<replace "#江湖手册">><<include "江湖手册">><</replace>>
 <</silently>><</widget>>
+[[开始|第一章 - 初始化]]
 
 <!--技能点初始化-->
 <<set $skillPoint to 10>>
@@ -111,5 +110,9 @@ LackCondolence
 
 :: PassageFooter
 
-
-<<include "江湖手册">>
+:: StoryInit
+<<script>>
+Template.add('trgy', function () {
+  return "@@color:red;天人感应@@";
+});
+<</script>>
