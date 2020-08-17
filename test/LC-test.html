@@ -804,11 +804,66 @@ macros.cyclinglink = {
 &lt;&lt;/silently&gt;&gt;&lt;&lt;/widget&gt;&gt;
 
 &lt;!--技能点初始化--&gt;
-&lt;&lt;set $skillPoint to 0&gt;&gt;
+&lt;&lt;set $skillPoint to 10&gt;&gt;
 &lt;&lt;set $SJMS to 0&gt;&gt;
 &lt;&lt;set $CYGS to 0&gt;&gt;
 &lt;&lt;set $TQDL to 0&gt;&gt;
-&lt;&lt;set $BXDW to 0&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="StoryMenu" tags="" position="225,100" size="100,100">[[人物技能|技能面板]]
+&lt;&lt;set $BXDW to 0&gt;&gt;
+
+&lt;!--技能点操作--&gt;
+&lt;&lt;nobr&gt;&gt;
+&lt;&lt;widget SJMS&gt;&gt;
+    &lt;&lt;set $SJMS++ &gt;&gt;
+    &lt;&lt;set $skillPoint-- &gt;&gt;
+    &lt;&lt;replace &quot;#skillPoint&quot;&gt;&gt;$skillPoint&lt;&lt;/replace&gt;&gt;
+    &lt;&lt;replace &quot;#SJMS&quot;&gt;&gt;$SJMS&lt;&lt;/replace&gt;&gt;
+&lt;&lt;/widget&gt;&gt;
+&lt;&lt;widget dSJMS&gt;&gt;
+    &lt;&lt;set $SJMS-- &gt;&gt;
+    &lt;&lt;set $skillPoint++ &gt;&gt;
+    &lt;&lt;replace &quot;#skillPoint&quot;&gt;&gt;$skillPoint&lt;&lt;/replace&gt;&gt;
+    &lt;&lt;replace &quot;#SJMS&quot;&gt;&gt;$SJMS&lt;&lt;/replace&gt;&gt;
+&lt;&lt;/widget&gt;&gt;
+
+&lt;&lt;widget CYGS&gt;&gt;
+    &lt;&lt;set $CYGS++ &gt;&gt;
+    &lt;&lt;set $skillPoint-- &gt;&gt;
+    &lt;&lt;replace &quot;#skillPoint&quot;&gt;&gt;$skillPoint&lt;&lt;/replace&gt;&gt;
+    &lt;&lt;replace &quot;#CYGS&quot;&gt;&gt;$CYGS&lt;&lt;/replace&gt;&gt;
+&lt;&lt;/widget&gt;&gt;
+&lt;&lt;widget dCYGS&gt;&gt;
+    &lt;&lt;set $CYGS-- &gt;&gt;
+    &lt;&lt;set $skillPoint++ &gt;&gt;
+    &lt;&lt;replace &quot;#skillPoint&quot;&gt;&gt;$skillPoint&lt;&lt;/replace&gt;&gt;
+    &lt;&lt;replace &quot;#CYGS&quot;&gt;&gt;$CYGS&lt;&lt;/replace&gt;&gt;
+&lt;&lt;/widget&gt;&gt;
+
+&lt;&lt;widget TQDL&gt;&gt;
+    &lt;&lt;set $TQDL++ &gt;&gt;
+    &lt;&lt;set $skillPoint-- &gt;&gt;
+    &lt;&lt;replace &quot;#skillPoint&quot;&gt;&gt;$skillPoint&lt;&lt;/replace&gt;&gt;
+    &lt;&lt;replace &quot;#TQDL&quot;&gt;&gt;$TQDL&lt;&lt;/replace&gt;&gt;
+&lt;&lt;/widget&gt;&gt;
+&lt;&lt;widget dTQDL&gt;&gt;
+    &lt;&lt;set $TQDL-- &gt;&gt;
+    &lt;&lt;set $skillPoint++ &gt;&gt;
+    &lt;&lt;replace &quot;#skillPoint&quot;&gt;&gt;$skillPoint&lt;&lt;/replace&gt;&gt;
+    &lt;&lt;replace &quot;#TQDL&quot;&gt;&gt;$TQDL&lt;&lt;/replace&gt;&gt;
+&lt;&lt;/widget&gt;&gt;
+
+&lt;&lt;widget BXDW&gt;&gt;
+    &lt;&lt;set $BXDW++ &gt;&gt;
+    &lt;&lt;set $skillPoint-- &gt;&gt;
+    &lt;&lt;replace &quot;#skillPoint&quot;&gt;&gt;$skillPoint&lt;&lt;/replace&gt;&gt;
+    &lt;&lt;replace &quot;#BXDW&quot;&gt;&gt;$BXDW&lt;&lt;/replace&gt;&gt;
+&lt;&lt;/widget&gt;&gt;
+&lt;&lt;widget dCYGS&gt;&gt;
+    &lt;&lt;set $CYGS-- &gt;&gt;
+    &lt;&lt;set $skillPoint++ &gt;&gt;
+    &lt;&lt;replace &quot;#skillPoint&quot;&gt;&gt;$skillPoint&lt;&lt;/replace&gt;&gt;
+    &lt;&lt;replace &quot;#CYGS&quot;&gt;&gt;$CYGS&lt;&lt;/replace&gt;&gt;
+&lt;&lt;/widget&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="StoryMenu" tags="" position="225,100" size="100,100">[[人物技能|技能面板]]
 &lt;&lt;link &#39;质问&#39;&gt;&gt;
 	&lt;&lt;append &quot;#lowCase&quot;&gt;&gt;&lt;&lt;include &quot;试探&quot;&gt;&gt;&lt;&lt;/append&gt;&gt;
 &lt;&lt;/link&gt;&gt; 
@@ -876,34 +931,11 @@ macros.cyclinglink = {
 \	&lt;&lt;link &quot;是洋教徒&quot;&gt;&gt;
 \		&lt;&lt;run $manIdentity.pushUnique(&quot;洋教徒&quot;)&gt;&gt;&lt;&lt;refresh&gt;&gt;
 \	&lt;&lt;/link&gt;&gt;
-\&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="技能面板" tags="" position="100,225" size="100,100">你的技能点：$skillPoint
-　　　　　　　　　　 　&lt;&lt;link &quot;通情达理&quot;&gt;&gt;&lt;&lt;TQDL&gt;&gt;&lt;&lt;/link&gt;&gt;
-　　　　　　　　　　　　　＾
-　　　　　　　　　　　　　＋
-　　　　　　　　　　　　　＋
-　　　　　　　　　　　　　＋
-　&lt;&lt;link &quot;神机妙算&quot;&gt;&gt;&lt;&lt;SJMS&gt;&gt;&lt;&lt;/link&gt;&gt;＜　\
-&lt;span id=&quot;SJMS11&quot;&gt;＋&lt;/span&gt;　\
-&lt;span id=&quot;SJMS6&quot;&gt;＋&lt;/span&gt;　\
-&lt;span id=&quot;SJMS1&quot;&gt;＋&lt;/span&gt;　\
-ｏ　\
-&lt;span id=&quot;CYGS1&quot;&gt;＋&lt;/span&gt;　\
-&lt;span id=&quot;CYGS6&quot;&gt;＋&lt;/span&gt;　\
-&lt;span id=&quot;CYGS11&quot;&gt;＋&lt;/span&gt;　\
-＞&lt;&lt;link &quot;察言观色&quot;&gt;&gt;&lt;&lt;察言观色&gt;&gt;&lt;&lt;/link&gt;&gt;
-　　　　　　　　　　　　　＋
-　　　　　　　　　　　　　＋
-　　　　　　　　　　　　　＋
-　　　　　　　　　　　　　ｖ
-　　　　　　　　　　　 博学多闻
-
-&lt;&lt;widget SJMS&gt;&gt;
-    &lt;&lt;set $SJMS++ &gt;&gt;\
-    &lt;&lt;set $skillPoint-- &gt;&gt;\
-    &lt;&lt;if $SJMS &gt;= 1&gt;&gt;&lt;&lt;replace &quot;#SJMS1&quot;&gt;&gt;＜&lt;&lt;/replace&gt;&gt;&lt;&lt;/if&gt;&gt;\
-    &lt;&lt;if $SJMS &gt;= 6&gt;&gt;&lt;&lt;replace &quot;#SJMS6&quot;&gt;&gt;＜&lt;&lt;/replace&gt;&gt;&lt;&lt;/if&gt;&gt;\
-    &lt;&lt;if $SJMS &gt;= 11&gt;&gt;&lt;&lt;replace &quot;#SJMS11&quot;&gt;&gt;＜&lt;&lt;/replace&gt;&gt;&lt;&lt;/if&gt;&gt;\
-&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="12" name="江湖手册" tags="" position="225,225" size="100,100">&lt;span id=&quot;江湖手册&quot;&gt;
+\&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="技能面板" tags="" position="100,225" size="100,100">你的技能点：&lt;span id=&quot;skillPoint&quot;&gt;$skillPoint&lt;/span&gt;
+神机妙算：&lt;span id=&quot;SJMS&quot;&gt;$SJMS&lt;/span&gt; &lt;&lt;link &quot;[+]&quot;&gt;&gt;&lt;&lt;SJMS&gt;&gt;&lt;&lt;/link&gt;&gt; &lt;&lt;link &quot;[-]&quot;&gt;&gt;&lt;&lt;dSJMS&gt;&gt;&lt;&lt;/link&gt;&gt;
+察言观色：&lt;span id=&quot;CYGS&quot;&gt;$CYGS&lt;/span&gt; &lt;&lt;link &quot;[+]&quot;&gt;&gt;&lt;&lt;CYGS&gt;&gt;&lt;&lt;/link&gt;&gt; &lt;&lt;link &quot;[-]&quot;&gt;&gt;&lt;&lt;dCYGS&gt;&gt;&lt;&lt;/link&gt;&gt;
+通情达理：&lt;span id=&quot;TQDL&quot;&gt;$TQDL&lt;/span&gt; &lt;&lt;link &quot;[+]&quot;&gt;&gt;&lt;&lt;TQDL&gt;&gt;&lt;&lt;/link&gt;&gt; &lt;&lt;link &quot;[-]&quot;&gt;&gt;&lt;&lt;dTQDL&gt;&gt;&lt;&lt;/link&gt;&gt;
+博学多闻：&lt;span id=&quot;BXDW&quot;&gt;$BXDW&lt;/span&gt; &lt;&lt;link &quot;[+]&quot;&gt;&gt;&lt;&lt;BXDW&gt;&gt;&lt;&lt;/link&gt;&gt; &lt;&lt;link &quot;[-]&quot;&gt;&gt;&lt;&lt;dBXDW&gt;&gt;&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="12" name="江湖手册" tags="" position="225,225" size="100,100">&lt;span id=&quot;江湖手册&quot;&gt;
 &lt;!--正文--&gt;
 我认为他……
 *&lt;&lt;include &quot;买办&quot;&gt;&gt;
