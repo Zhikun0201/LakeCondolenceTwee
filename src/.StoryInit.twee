@@ -1,0 +1,116 @@
+:: StoryInit
+<!--自定义模板-->
+    <<script>>
+        /*你*/
+		Template.add('You', function(){
+			return "你 -"
+        })
+        /*天人感应*/
+		Template.add('Shivers', function () {
+			return "@@color:red;天人感应@@ -";
+		});
+	<</script>>
+
+<!--刷新功能-->
+	<<widget "refresh">><<silently>>
+		/*初始化*/
+		<<if $manIdentity.first() eq "">>
+			<<run $manIdentity.pushUnique("???")>>
+		<<elseif $manIdentity.last() neq "???">>
+			<<run $manIdentity.delete("???")>>
+		<</if>>
+		
+		/*更新侧边栏*/
+		<<replace "#story-caption">><<include "StoryCaption">><</replace>>
+		<<replace "#人物档案">><<include "人物档案">><</replace>>
+	<</silently>><</widget>>
+
+<!--技能点初始化-->
+	<<set $skillPoint to 10>>
+	<<set $SJMS to 0>>
+	<<set $CYGS to 0>>
+	<<set $TQDL to 0>>
+	<<set $BXDW to 0>>
+
+<!--技能点操作-->
+	<<nobr>>
+	<<widget SJMS>>
+		<<set $SJMS++ >>
+		<<set $skillPoint-- >>
+		<<replace "#skillPoint">>$skillPoint<</replace>>
+		<<replace "#SJMS">>$SJMS<</replace>>
+	<</widget>>
+	<<widget dSJMS>>
+		<<set $SJMS-- >>
+		<<set $skillPoint++ >>
+		<<replace "#skillPoint">>$skillPoint<</replace>>
+		<<replace "#SJMS">>$SJMS<</replace>>
+	<</widget>>
+
+	<<widget CYGS>>
+		<<set $CYGS++ >>
+		<<set $skillPoint-- >>
+		<<replace "#skillPoint">>$skillPoint<</replace>>
+		<<replace "#CYGS">>$CYGS<</replace>>
+	<</widget>>
+	<<widget dCYGS>>
+		<<set $CYGS-- >>
+		<<set $skillPoint++ >>
+		<<replace "#skillPoint">>$skillPoint<</replace>>
+		<<replace "#CYGS">>$CYGS<</replace>>
+	<</widget>>
+
+	<<widget TQDL>>
+		<<set $TQDL++ >>
+		<<set $skillPoint-- >>
+		<<replace "#skillPoint">>$skillPoint<</replace>>
+		<<replace "#TQDL">>$TQDL<</replace>>
+	<</widget>>
+	<<widget dTQDL>>
+		<<set $TQDL-- >>
+		<<set $skillPoint++ >>
+		<<replace "#skillPoint">>$skillPoint<</replace>>
+		<<replace "#TQDL">>$TQDL<</replace>>
+	<</widget>>
+
+	<<widget BXDW>>
+		<<set $BXDW++ >>
+		<<set $skillPoint-- >>
+		<<replace "#skillPoint">>$skillPoint<</replace>>
+		<<replace "#BXDW">>$BXDW<</replace>>
+	<</widget>>
+	<<widget dBXDW>>
+		<<set $BXDW-- >>
+		<<set $skillPoint++ >>
+		<<replace "#skillPoint">>$skillPoint<</replace>>
+		<<replace "#BXDW">>$BXDW<</replace>>
+	<</widget>>
+	<</nobr>>
+
+<!--对话分支按钮-->
+	<<widget dlg>><span id="brcs"><li><<linkreplace $args[0]>>\
+		<<silently>>\/*清空选项区域内容*/
+			<<remove "div>#brcs">>
+			<<remove "span>#brcs">>
+			<<remove "div>.macro-append-insert>.macro-linkreplace-insert">>
+			<<remove "div>.macro-append-insert>br+br">>
+			<<remove "div>.macro-append-insert>span+br">>
+		<</silently>>\
+		<<append "#dlg">>\/*将选择了的选项转换为对话*/
+			@@color:silver;?You <<= $args[0]>>@@<</append>>\
+		<<append "#dlg" t8n>>\ /*更新链接所对应的文章内容*/
+			<<include $args[1]>><</append>>\
+	<</linkreplace>></li></span><</widget>>
+
+<!--继续按钮-->
+	<<widget ctn>><span id="brcs"><<linkreplace "继续">>\
+		<<silently>>\/*清空选项区域内容*/
+			<<remove "div>#brcs">>\
+			<<remove "span>#brcs">>\
+			<<remove "div>.macro-append-insert>.macro-linkreplace-insert">>
+			<<remove "div>.macro-append-insert>br+br">>
+			<<remove "div>.macro-append-insert>span+br">>
+		<</silently>>\
+		<<append "#dlg" t8n>>\ /*更新链接所对应的文章内容*/
+			<<include $args[0]>><</append>>\
+	<</linkreplace>></span><</widget>>

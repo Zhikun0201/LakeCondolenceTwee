@@ -1,8 +1,8 @@
 :: 技能
 你的技能点：<span id="skillPoint">$skillPoint</span>
-神机妙算：<span id="SJMS">$SJMS</span> <<link "[+]">><<SJMS>><</link>> <<link "[-]">><<dSJMS>><</link>>
-察言观色：<span id="CYGS">$CYGS</span> <<link "[+]">><<CYGS>><</link>> <<link "[-]">><<dCYGS>><</link>>
-通情达理：<span id="TQDL">$TQDL</span> <<link "[+]">><<TQDL>><</link>> <<link "[-]">><<dTQDL>><</link>>
-博学多闻：<span id="BXDW">$BXDW</span> <<link "[+]">><<BXDW>><</link>> <<link "[-]">><<dBXDW>><</link>>
+神机妙算：<span id="SJMS">$SJMS</span> <<button "[+]">><<SJMS>><</button>> <<button "[-]">><<dSJMS>><</button>>
+察言观色：<span id="CYGS">$CYGS</span> <<button "[+]">><<CYGS>><</button>> <<button "[-]">><<dCYGS>><</button>>
+通情达理：<span id="TQDL">$TQDL</span> <<button "[+]">><<TQDL>><</button>> <<button "[-]">><<dTQDL>><</button>>
+博学多闻：<span id="BXDW">$BXDW</span> <<button "[+]">><<BXDW>><</button>> <<button "[-]">><<dBXDW>><</button>>
 <<link "返回">><<return>><</link>>
 
