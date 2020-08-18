@@ -1,16 +1,14 @@
-:: CH1
+:: 人物.马五爷
 <<nobr>>
 <<set $manName to "马五爷", $manAge to "???">>
 <<set $manIdentity to []>><<run $manIdentity.push("???")>>
 <<set $manFear to []>><<run $manFear.push("???")>>
 <</nobr>>
-<!--第一章开始-->
-<div id="dlg"> ?Shivers 你感到秋天开始了。</div>
-<<include "CH1.brc">>
+<<goto "1">>
 
-:: CH1.brc
+:: 1
+<div id="dlg"> ?Shivers 你感到秋天开始了。</div>
 <<dlg "是吗？" "1.1">>
-<<dlg "啊哈" "1.2">>
 
 :: 1.1
 ?Shivers 当然是，你有什么问题？你忘了你早上踩到的那个西瓜皮吗？立秋了！每个人都有西瓜吃！只有你，你踩着一块西瓜皮摔到了茅房旁边，沾了一脸的屎，还半天找不到水洗干净。
@@ -44,6 +42,3 @@
 :: 1.8
 啊！这就是连续继续攻击吗！
 <<dlg "马达马达！" "1.2">>
-
-:: 呃！！！
-呃！！！

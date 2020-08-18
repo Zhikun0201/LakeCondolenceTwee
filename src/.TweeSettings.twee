@@ -7,9 +7,11 @@
 }
 
 :: Start
+<div style ="text-align:center;display: flex; justify-content: center; flex-direction: column; height: 400px;">
 献给婧阳。
 
-——[[开始|CH1]]
+[[——开始|人物.马五爷]]
+</div>
 
 :: StoryTitle
 LackCondolence
