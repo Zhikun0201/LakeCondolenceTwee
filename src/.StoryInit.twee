@@ -7,7 +7,7 @@
         })
         /*天人感应*/
 		Template.add('Shivers', function () {
-			return "@@color:red;text-indent:-15px;天人感应@@ -";
+			return "@@color:#FF6666;text-indent:-15px;天人感应@@ -";
 		});
 	<</script>>
 
@@ -96,7 +96,7 @@
 			<<remove "div>.macro-append-insert>span+br">>
 		<</silently>>\
 		<<append "#dlg">>\/*将选择了的选项转换为对话*/
-			@@color:silver;?You <<= $args[0]>>@@<</append>>\
+			@@color:grey;?You <<= $args[0]>>@@<</append>>\
 		<<append "#dlg" t8n>>\ /*更新链接所对应的文章内容*/
 			<<include $args[1]>><</append>>\
 	<</linkreplace>></span><</widget>>
