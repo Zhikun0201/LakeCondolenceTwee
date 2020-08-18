@@ -788,28 +788,13 @@ macros.cyclinglink = {
                 this.setAttribute("data-cycle", u)
             }
     }
-};</script><tw-passagedata pid="1" name="StoryMenu" tags="" position="100,100" size="100,100">[[技能|技能]]
-[[人物档案|人物档案]]
-[[江湖金口诀|江湖金口诀]]
-&lt;&lt;link &#39;质问&#39;&gt;&gt;
-	&lt;&lt;append &quot;#lowCase&quot;&gt;&gt;&lt;&lt;include &quot;试探&quot;&gt;&gt;&lt;&lt;/append&gt;&gt;
-&lt;&lt;/link&gt;&gt; 
-&lt;&lt;link &#39;恫吓&#39;&gt;&gt;
-	&lt;&lt;append &quot;#lowCase&quot;&gt;&gt;&lt;&lt;include &quot;试探&quot;&gt;&gt;&lt;&lt;/append&gt;&gt;
-&lt;&lt;/link&gt;&gt; 
-&lt;&lt;link &#39;恭维&#39;&gt;&gt;
-	&lt;&lt;append &quot;#lowCase&quot;&gt;&gt;&lt;&lt;include &quot;试探&quot;&gt;&gt;&lt;&lt;/append&gt;&gt;
-&lt;&lt;/link&gt;&gt; 
-&lt;&lt;link &#39;坦言&#39;&gt;&gt;
-	&lt;&lt;append &quot;#lowCase&quot;&gt;&gt;&lt;&lt;include &quot;试探&quot;&gt;&gt;&lt;&lt;/append&gt;&gt;
-&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="StoryCaption" tags="" position="225,100" size="100,100">姓名：$manName
-年龄：$manAge
-身份：$manIdentity
-担忧：$manFear</tw-passagedata><tw-passagedata pid="3" name="PassageFooter" tags="" position="350,100" size="100,100"></tw-passagedata><tw-passagedata pid="4" name="StoryInit" tags="" position="475,100" size="100,100">&lt;!--自定义模板--&gt;
-	&lt;&lt;script&gt;&gt;
+};</script><tw-passagedata pid="1" name="StoryInit" tags="" position="100,100" size="100,100">&lt;!--自定义模板--&gt;
+    &lt;&lt;script&gt;&gt;
+        /*你*/
 		Template.add(&#39;You&#39;, function(){
 			return &quot;你 -&quot;
-		})
+        })
+        /*天人感应*/
 		Template.add(&#39;Shivers&#39;, function () {
 			return &quot;@@color:red;天人感应@@ -&quot;;
 		});
@@ -892,10 +877,10 @@ macros.cyclinglink = {
 	&lt;&lt;/nobr&gt;&gt;
 
 &lt;!--对话分支按钮--&gt;
-	&lt;&lt;widget dlg&gt;&gt;&lt;span id=&quot;brcs&quot;&gt;&lt;&lt;linkreplace $args[0]&gt;&gt;\
+	&lt;&lt;widget dlg&gt;&gt;&lt;span id=&quot;brcs&quot;&gt;&lt;li&gt;&lt;&lt;linkreplace $args[0]&gt;&gt;\
 		&lt;&lt;silently&gt;&gt;\/*清空选项区域内容*/
-			&lt;&lt;remove &quot;div&gt;#brcs&quot;&gt;&gt;\
-			&lt;&lt;remove &quot;span&gt;#brcs&quot;&gt;&gt;\
+			&lt;&lt;remove &quot;div&gt;#brcs&quot;&gt;&gt;
+			&lt;&lt;remove &quot;span&gt;#brcs&quot;&gt;&gt;
 			&lt;&lt;remove &quot;div&gt;.macro-append-insert&gt;.macro-linkreplace-insert&quot;&gt;&gt;
 			&lt;&lt;remove &quot;div&gt;.macro-append-insert&gt;br+br&quot;&gt;&gt;
 			&lt;&lt;remove &quot;div&gt;.macro-append-insert&gt;span+br&quot;&gt;&gt;
@@ -904,7 +889,7 @@ macros.cyclinglink = {
 			@@color:silver;?You &lt;&lt;= $args[0]&gt;&gt;@@&lt;&lt;/append&gt;&gt;\
 		&lt;&lt;append &quot;#dlg&quot; t8n&gt;&gt;\ /*更新链接所对应的文章内容*/
 			&lt;&lt;include $args[1]&gt;&gt;&lt;&lt;/append&gt;&gt;\
-	&lt;&lt;/linkreplace&gt;&gt;&lt;/span&gt;&lt;&lt;/widget&gt;&gt;
+	&lt;&lt;/linkreplace&gt;&gt;&lt;/li&gt;&lt;/span&gt;&lt;&lt;/widget&gt;&gt;
 
 &lt;!--继续按钮--&gt;
 	&lt;&lt;widget ctn&gt;&gt;&lt;span id=&quot;brcs&quot;&gt;&lt;&lt;linkreplace &quot;继续&quot;&gt;&gt;\
@@ -917,7 +902,24 @@ macros.cyclinglink = {
 		&lt;&lt;/silently&gt;&gt;\
 		&lt;&lt;append &quot;#dlg&quot; t8n&gt;&gt;\ /*更新链接所对应的文章内容*/
 			&lt;&lt;include $args[0]&gt;&gt;&lt;&lt;/append&gt;&gt;\
-	&lt;&lt;/linkreplace&gt;&gt;&lt;/span&gt;&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="Start" tags="" position="600,100" size="100,100">&lt;div style =&quot;text-align:center;display: flex; justify-content: center; flex-direction: column; height: 400px;&quot;&gt;
+	&lt;&lt;/linkreplace&gt;&gt;&lt;/span&gt;&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="StoryMenu" tags="" position="225,100" size="100,100">[[技能|技能]]
+[[人物档案|人物档案]]
+[[江湖金口诀|江湖金口诀]]
+&lt;&lt;link &#39;质问&#39;&gt;&gt;
+	&lt;&lt;append &quot;#lowCase&quot;&gt;&gt;&lt;&lt;include &quot;试探&quot;&gt;&gt;&lt;&lt;/append&gt;&gt;
+&lt;&lt;/link&gt;&gt; 
+&lt;&lt;link &#39;恫吓&#39;&gt;&gt;
+	&lt;&lt;append &quot;#lowCase&quot;&gt;&gt;&lt;&lt;include &quot;试探&quot;&gt;&gt;&lt;&lt;/append&gt;&gt;
+&lt;&lt;/link&gt;&gt; 
+&lt;&lt;link &#39;恭维&#39;&gt;&gt;
+	&lt;&lt;append &quot;#lowCase&quot;&gt;&gt;&lt;&lt;include &quot;试探&quot;&gt;&gt;&lt;&lt;/append&gt;&gt;
+&lt;&lt;/link&gt;&gt; 
+&lt;&lt;link &#39;坦言&#39;&gt;&gt;
+	&lt;&lt;append &quot;#lowCase&quot;&gt;&gt;&lt;&lt;include &quot;试探&quot;&gt;&gt;&lt;&lt;/append&gt;&gt;
+&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="StoryCaption" tags="" position="350,100" size="100,100">姓名：$manName
+年龄：$manAge
+身份：$manIdentity
+担忧：$manFear</tw-passagedata><tw-passagedata pid="4" name="PassageFooter" tags="" position="475,100" size="100,100"></tw-passagedata><tw-passagedata pid="5" name="Start" tags="" position="600,100" size="100,100">&lt;div style =&quot;text-align:center;display: flex; justify-content: center; flex-direction: column; height: 400px;&quot;&gt;
 献给婧阳。
 
 [[——开始|人物.马五爷]]
@@ -931,11 +933,12 @@ Template.add(&#39;pirate&#39;, function () {
 &lt;&lt;set $manIdentity to []&gt;&gt;&lt;&lt;run $manIdentity.push(&quot;???&quot;)&gt;&gt;
 &lt;&lt;set $manFear to []&gt;&gt;&lt;&lt;run $manFear.push(&quot;???&quot;)&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;
-&lt;&lt;goto &quot;1&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="1" tags="" position="975,100" size="100,100">&lt;div id=&quot;dlg&quot;&gt; ?Shivers 你感到秋天开始了。&lt;/div&gt;
-&lt;&lt;dlg &quot;是吗？&quot; &quot;1.1&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="1.1" tags="" position="1100,100" size="100,100">?Shivers 当然是，你有什么问题？你忘了你早上踩到的那个西瓜皮吗？立秋了！每个人都有西瓜吃！只有你，你踩着一块西瓜皮摔到了茅房旁边，沾了一脸的屎，还半天找不到水洗干净。
-&lt;&lt;ctn &quot;1.3&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="1.2" tags="" position="1225,100" size="100,100">一切都结束了！
-&lt;&lt;dlg &quot;真的吗？我不信。&quot; &quot;1.3&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="1.3" tags="" position="100,225" size="100,100">嗯哼？
-&lt;&lt;dlg &quot;你看你根本没有结束！&quot; &quot;1.4&quot;&gt;&gt;
+&lt;&lt;goto &quot;1.1&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="1.1" tags="" position="975,100" size="100,100">&lt;div id=&quot;dlg&quot;&gt; ?Shivers 你感到秋天开始了。&lt;/div&gt;
+&lt;&lt;dlg &quot;是吗？你怎么知道这是“秋天开始了”，而不是冬天开始了，乃或者春天、夏天，至于三九天？&quot; &quot;1.1.1&quot;&gt;&gt;
+&lt;&lt;dlg &quot;好冷，我的身子就像冰一样。有谁在我身上泼水了吗？&quot; &quot;1.1.2&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="1.1.1" tags="" position="1100,100" size="100,100">?Shivers 当然是秋天，你是不是有什么毛病？你忘了你早上踩到的那个西瓜皮吗？立秋了！每个人都有西瓜吃！
+&lt;&lt;ctn &quot;1.1.1.1&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="1.1.2" tags="" position="1225,100" size="100,100">一切都结束了！
+&lt;&lt;dlg &quot;真的吗？我不信。&quot; &quot;1.3&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="1.1.1.1" tags="" position="100,225" size="100,100">?Shivers 只有你，你踩着一块西瓜皮摔到了茅房里面，马桶被你铲了起来，在半空中转了一圈半，屎混杂着尿在你的眼前狂舞，你沾了一脸的屎，还半天找不到水洗干净。
+&lt;&lt;dlg &quot;我可去你的吧，你才满脸是屎。&quot; &quot;1.4&quot;&gt;&gt;
 &lt;&lt;dlg &quot;摩多摩多&quot; &quot;1.8&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="12" name="1.4" tags="" position="225,225" size="100,100">?Shivers 确实，这是没有结束的。
 &lt;&lt;ctn &quot;1.5&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="13" name="1.5" tags="" position="350,225" size="100,100">但是，这已经结束了，我没收了你的按钮！
 &lt;&lt;ctn &quot;1.6&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="14" name="1.6" tags="" position="475,225" size="100,100">等等，为什么你还能继续？！
@@ -980,10 +983,10 @@ Template.add(&#39;pirate&#39;, function () {
 *&lt;&lt;include &quot;身份.买办&quot;&gt;&gt;
 *&lt;&lt;include &quot;身份.洋教徒&quot;&gt;&gt;
 \&lt;/span&gt;</tw-passagedata><tw-passagedata pid="23" name="技能" tags="" position="350,350" size="100,100">你的技能点：&lt;span id=&quot;skillPoint&quot;&gt;$skillPoint&lt;/span&gt;
-神机妙算：&lt;span id=&quot;SJMS&quot;&gt;$SJMS&lt;/span&gt; &lt;&lt;link &quot;[+]&quot;&gt;&gt;&lt;&lt;SJMS&gt;&gt;&lt;&lt;/link&gt;&gt; &lt;&lt;link &quot;[-]&quot;&gt;&gt;&lt;&lt;dSJMS&gt;&gt;&lt;&lt;/link&gt;&gt;
-察言观色：&lt;span id=&quot;CYGS&quot;&gt;$CYGS&lt;/span&gt; &lt;&lt;link &quot;[+]&quot;&gt;&gt;&lt;&lt;CYGS&gt;&gt;&lt;&lt;/link&gt;&gt; &lt;&lt;link &quot;[-]&quot;&gt;&gt;&lt;&lt;dCYGS&gt;&gt;&lt;&lt;/link&gt;&gt;
-通情达理：&lt;span id=&quot;TQDL&quot;&gt;$TQDL&lt;/span&gt; &lt;&lt;link &quot;[+]&quot;&gt;&gt;&lt;&lt;TQDL&gt;&gt;&lt;&lt;/link&gt;&gt; &lt;&lt;link &quot;[-]&quot;&gt;&gt;&lt;&lt;dTQDL&gt;&gt;&lt;&lt;/link&gt;&gt;
-博学多闻：&lt;span id=&quot;BXDW&quot;&gt;$BXDW&lt;/span&gt; &lt;&lt;link &quot;[+]&quot;&gt;&gt;&lt;&lt;BXDW&gt;&gt;&lt;&lt;/link&gt;&gt; &lt;&lt;link &quot;[-]&quot;&gt;&gt;&lt;&lt;dBXDW&gt;&gt;&lt;&lt;/link&gt;&gt;
+神机妙算：&lt;span id=&quot;SJMS&quot;&gt;$SJMS&lt;/span&gt; &lt;&lt;button &quot;[+]&quot;&gt;&gt;&lt;&lt;SJMS&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;&lt;button &quot;[-]&quot;&gt;&gt;&lt;&lt;dSJMS&gt;&gt;&lt;&lt;/button&gt;&gt;
+察言观色：&lt;span id=&quot;CYGS&quot;&gt;$CYGS&lt;/span&gt; &lt;&lt;button &quot;[+]&quot;&gt;&gt;&lt;&lt;CYGS&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;&lt;button &quot;[-]&quot;&gt;&gt;&lt;&lt;dCYGS&gt;&gt;&lt;&lt;/button&gt;&gt;
+通情达理：&lt;span id=&quot;TQDL&quot;&gt;$TQDL&lt;/span&gt; &lt;&lt;button &quot;[+]&quot;&gt;&gt;&lt;&lt;TQDL&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;&lt;button &quot;[-]&quot;&gt;&gt;&lt;&lt;dTQDL&gt;&gt;&lt;&lt;/button&gt;&gt;
+博学多闻：&lt;span id=&quot;BXDW&quot;&gt;$BXDW&lt;/span&gt; &lt;&lt;button &quot;[+]&quot;&gt;&gt;&lt;&lt;BXDW&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;&lt;button &quot;[-]&quot;&gt;&gt;&lt;&lt;dBXDW&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;&lt;link &quot;返回&quot;&gt;&gt;&lt;&lt;return&gt;&gt;&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="江湖金口诀" tags="" position="475,350" size="100,100"></tw-passagedata></tw-storydata>
 	<script id="script-sugarcube" type="text/javascript">
 	/*! SugarCube JS */
