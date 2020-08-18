@@ -4,5 +4,4 @@
 察言观色：<span id="CYGS">$CYGS</span> <<button "[+]">><<CYGS>><</button>> <<button "[-]">><<dCYGS>><</button>>
 通情达理：<span id="TQDL">$TQDL</span> <<button "[+]">><<TQDL>><</button>> <<button "[-]">><<dTQDL>><</button>>
 博学多闻：<span id="BXDW">$BXDW</span> <<button "[+]">><<BXDW>><</button>> <<button "[-]">><<dBXDW>><</button>>
-<<link "返回">><<return>><</link>>
 

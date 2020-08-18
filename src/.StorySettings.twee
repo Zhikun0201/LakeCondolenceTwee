@@ -1,24 +1,2 @@
-:: StoryMenu
-[[技能|技能]]
-[[人物档案|人物档案]]
-[[江湖金口诀|江湖金口诀]]
-<<link '质问'>>
-	<<append "#lowCase">><<include "试探">><</append>>
-<</link>> 
-<<link '恫吓'>>
-	<<append "#lowCase">><<include "试探">><</append>>
-<</link>> 
-<<link '恭维'>>
-	<<append "#lowCase">><<include "试探">><</append>>
-<</link>> 
-<<link '坦言'>>
-	<<append "#lowCase">><<include "试探">><</append>>
-<</link>> 
-
 :: StoryCaption
-姓名：$manName
-年龄：$manAge
-身份：$manIdentity
-担忧：$manFear
-
 :: PassageFooter

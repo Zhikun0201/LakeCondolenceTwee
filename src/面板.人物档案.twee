@@ -1,7 +1,11 @@
 :: 人物档案
 <span id="人物档案">
-<!--正文-->
+*姓名：$manName
+*年龄：$manAge
+*身份：$manIdentity
+*担忧：$manFear
+
 我认为他……
-*<<include "身份.买办">>
-*<<include "身份.洋教徒">>
-\</span>
+**<<include "身份.买办">>
+**<<include "身份.洋教徒">>
+</span>

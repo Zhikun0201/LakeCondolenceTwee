@@ -1,6 +1,6 @@
 :: 试探
 \<<if $manIdentity.includes("???")>>
-	你（试探） - 还要再观察一下。你什么都看不出来。
+	?You （试探）还要再观察一下。你什么都看不出来。
 \<</if>>
 \<<if $manIdentity.includes("洋教徒") && $YangJiaoTu !=1>>
 	<<include [[试探【洋教徒】]]>><<set $YangJiaoTu =1>>

@@ -1,0 +1,32 @@
+:: StoryMenu
+<<link "技能">>
+  <<script>>
+    Dialog.setup("Dialog");
+    Dialog.wiki(Story.get("技能").processText());
+    Dialog.open();
+ 	<</script>>
+	<</link>>
+
+<<link "人物档案">>
+  <<script>>
+    Dialog.setup("Dialog");
+    Dialog.wiki(Story.get("人物档案").processText());
+    Dialog.open();
+  <</script>>
+  <</link>>
+
+<<link '试探'>>
+	<<append "#dlg">><<include "试探">><</append>>
+<</link>> 
+<<link '质问'>>
+	<<append "#dlg">><<include "试探">><</append>>
+<</link>> 
+<<link '恫吓'>>
+	<<append "#dlg">><<include "试探">><</append>>
+<</link>> 
+<<link '恭维'>>
+	<<append "#dlg">><<include "试探">><</append>>
+<</link>> 
+<<link '坦言'>>
+	<<append "#dlg">><<include "试探">><</append>>
+<</link>> 

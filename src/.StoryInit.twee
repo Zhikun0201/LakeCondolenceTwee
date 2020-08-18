@@ -3,11 +3,11 @@
     <<script>>
         /*你*/
 		Template.add('You', function(){
-			return "你 -"
+			return "@@text-indent:-15%;你@@ -"
         })
         /*天人感应*/
 		Template.add('Shivers', function () {
-			return "@@color:red;天人感应@@ -";
+			return "@@color:red;text-indent:-15px;天人感应@@ -";
 		});
 	<</script>>
 
@@ -21,7 +21,6 @@
 		<</if>>
 		
 		/*更新侧边栏*/
-		<<replace "#story-caption">><<include "StoryCaption">><</replace>>
 		<<replace "#人物档案">><<include "人物档案">><</replace>>
 	<</silently>><</widget>>
 
@@ -88,7 +87,7 @@
 	<</nobr>>
 
 <!--对话分支按钮-->
-	<<widget dlg>><span id="brcs"><li><<linkreplace $args[0]>>\
+	<<widget dlg>><span id="brcs"><<linkreplace $args[0]>>\
 		<<silently>>\/*清空选项区域内容*/
 			<<remove "div>#brcs">>
 			<<remove "span>#brcs">>
@@ -100,7 +99,7 @@
 			@@color:silver;?You <<= $args[0]>>@@<</append>>\
 		<<append "#dlg" t8n>>\ /*更新链接所对应的文章内容*/
 			<<include $args[1]>><</append>>\
-	<</linkreplace>></li></span><</widget>>
+	<</linkreplace>></span><</widget>>
 
 <!--继续按钮-->
 	<<widget ctn>><span id="brcs"><<linkreplace "继续">>\
