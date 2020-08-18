@@ -98,7 +98,7 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 		<div id="init-lacking">Your browser lacks required capabilities. Please upgrade it or switch to another to continue.</div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<!-- UUID://D56A0595-E867-4566-8F20-6CE8C6492E58// --><tw-storydata name="LackCondolence" startnode="5" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="D56A0595-E867-4566-8F20-6CE8C6492E58" zoom="1" format="SugarCube" format-version="2.33.1" options="debug" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">.say p:last-of-type {
+	<!-- UUID://D56A0595-E867-4566-8F20-6CE8C6492E58// --><tw-storydata name="LackCondolence" startnode="5" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="D56A0595-E867-4566-8F20-6CE8C6492E58" zoom="1" format="SugarCube" format-version="2.33.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">.say p:last-of-type {
     padding: 0.5em 0;
     margin: 0;
     float: left;
@@ -892,14 +892,15 @@ macros.cyclinglink = {
 	&lt;&lt;/nobr&gt;&gt;
 
 &lt;!--对话分支按钮--&gt;
-	&lt;&lt;widget dlg&gt;&gt;&lt;&lt;linkreplace $args[0]&gt;&gt;
+	&lt;&lt;widget dlg&gt;&gt;
+		&lt;ol&gt;&lt;li&gt;&lt;&lt;linkreplace $args[0]&gt;&gt;
 			\&lt;&lt;replace &quot;#brc&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;/*清空选项区域内容*/
 			\&lt;&lt;append &quot;#dlg&quot;&gt;&gt;/*将选择了的选项转换为对话*/
 				\@@color:silver;?You &lt;&lt;= $args[0]&gt;&gt;@@&lt;&lt;/append&gt;&gt;
 			\&lt;&lt;append &quot;#dlg&quot; t8n&gt;&gt; /*更新链接所对应的文章内容*/
 				
 				&lt;&lt;include $args[1]&gt;&gt;&lt;&lt;/append&gt;&gt;
-		\&lt;&lt;/linkreplace&gt;&gt;&lt;&lt;/widget&gt;&gt;
+		\&lt;&lt;/linkreplace&gt;&gt;&lt;/li&gt;&lt;/ol&gt;&lt;&lt;/widget&gt;&gt;
 
 &lt;!--继续按钮--&gt;
 	&lt;&lt;widget ctn&gt;&gt;&lt;&lt;replace &quot;#brc&quot;&gt;&gt;
@@ -923,7 +924,6 @@ Template.add(&#39;pirate&#39;, function () {
 &lt;span id=&quot;dlg&quot;&gt; 
     ?Shivers 你感到秋天开始了。
 &lt;/span&gt;
-
 &lt;span id=&quot;brc&quot;&gt;
     &lt;&lt;include &quot;CH1.choice&quot;&gt;&gt;
 &lt;/span&gt;</tw-passagedata><tw-passagedata pid="8" name="CH1.choice" tags="" position="975,100" size="100,100">&lt;&lt;dlg &quot;是吗？&quot; &quot;俺爸爸&quot;&gt;&gt;

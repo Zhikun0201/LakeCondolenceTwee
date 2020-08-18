@@ -1,4 +1,4 @@
-:: 技能面板
+:: 技能
 你的技能点：<span id="skillPoint">$skillPoint</span>
 神机妙算：<span id="SJMS">$SJMS</span> <<link "[+]">><<SJMS>><</link>> <<link "[-]">><<dSJMS>><</link>>
 察言观色：<span id="CYGS">$CYGS</span> <<link "[+]">><<CYGS>><</link>> <<link "[-]">><<dCYGS>><</link>>
