@@ -107,6 +107,13 @@ body {
 	font-family:"微软雅黑", Times, serif;
 }
 
+#dlg {
+	
+}
+
+span{
+}
+
 /*****************************************************
 ! <<replacelink>> macro set for SugarCube 2.x 
 ******************************************************/
@@ -739,15 +746,15 @@ macros.cyclinglink = {
 Template.add(&#39;pirate&#39;, function () {
   return &quot;Hello, me hardy!&quot;;
 });
-&lt;&lt;/script&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="人物.马五爷" tags="" position="850,100" size="100,100">&lt;&lt;nobr&gt;&gt;
-&lt;&lt;set $manName to &quot;马五爷&quot;, $manAge to &quot;???&quot;&gt;&gt;
-&lt;&lt;set $manIdentity to []&gt;&gt;&lt;&lt;run $manIdentity.push(&quot;???&quot;)&gt;&gt;
-&lt;&lt;set $manFear to []&gt;&gt;&lt;&lt;run $manFear.push(&quot;???&quot;)&gt;&gt;
-&lt;&lt;/nobr&gt;&gt;
-&lt;&lt;goto &quot;1.0&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="1.0" tags="" position="975,100" size="100,100">&lt;div id=&quot;dlg&quot;&gt;&lt;&lt;include &quot;1.1&quot;&gt;&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="9" name="1.1" tags="" position="1100,100" size="100,100">?Shivers 你感到秋天开始了。
-&lt;&lt;dlg &quot;是吗？你怎么知道这是“秋天开始了”，而不是冬天开始了，乃或者春天、夏天，至于三九天？&quot; &quot;1.1.1&quot;&gt;&gt;
-&lt;&lt;dlg &quot;测试&quot; &quot;1.1.1.1&quot;&gt;&gt;
-&lt;&lt;dlg &quot;测试2&quot; &quot;1.1.1.1&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="1.1.1" tags="" position="1225,100" size="100,100">?Shivers 当然是秋天，你是不是有什么毛病？你忘了你早上踩到的那个西瓜皮吗？立秋了！每个人都有西瓜吃！除了你！
+&lt;&lt;/script&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="人物.马五爷" tags="" position="850,100" size="100,100">/* 人物档案初始化 */
+    &lt;&lt;nobr&gt;&gt;
+        &lt;&lt;set $manName to &quot;马五爷&quot;, $manAge to &quot;???&quot;&gt;&gt;
+        &lt;&lt;set $manIdentity to []&gt;&gt;&lt;&lt;run $manIdentity.push(&quot;???&quot;)&gt;&gt;
+        &lt;&lt;set $manFear to []&gt;&gt;&lt;&lt;run $manFear.push(&quot;???&quot;)&gt;&gt;
+    &lt;&lt;/nobr&gt;&gt;
+/* 跳转至正文 */
+    &lt;&lt;goto &quot;1.0&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="1.0" tags="" position="975,100" size="100,100">&lt;div id=&quot;dlg&quot;&gt;&lt;&lt;include &quot;1.1&quot;&gt;&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="9" name="1.1" tags="" position="1100,100" size="100,100">?Shivers 你感到秋天开始了。
+&lt;&lt;dlg &quot;是吗？你怎么知道这是“秋天开始了”，而不是冬天开始了，乃或者春天、夏天，至于三九天？&quot; &quot;1.1.1&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="1.1.1" tags="" position="1225,100" size="100,100">?Shivers 当然是秋天，你是不是有什么毛病？你忘了你早上踩到的那个西瓜皮吗？立秋了！每个人都有西瓜吃！除了你！
 &lt;&lt;ctn &quot;1.1.1.1&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="1.1.1.1" tags="" position="100,225" size="100,100">?Shivers 只有你，你踩着一块西瓜皮摔到了茅房里面，马桶被你铲了起来，在空中转了一圈半，屎和尿混杂着在你的眼前狂舞，你沾了一脸的屎，还半天找不到水洗干净。
 &lt;&lt;dlg &quot;那我现在脸上还有吗？&quot; &quot;1.1.1.1.1&quot;&gt;&gt;
 &lt;&lt;dlg &quot;摩多摩多&quot; &quot;1.1.1.1.2&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="12" name="1.1.1.1.1" tags="" position="225,225" size="100,100">?Shivers 我还没写好</tw-passagedata><tw-passagedata pid="13" name="1.1.1.1.2" tags="" position="350,225" size="100,100">?Shivers 唉呀妈呀！真香！</tw-passagedata><tw-passagedata pid="14" name="试探" tags="" position="475,225" size="100,100">\&lt;&lt;if $manIdentity.includes(&quot;???&quot;)&gt;&gt;
