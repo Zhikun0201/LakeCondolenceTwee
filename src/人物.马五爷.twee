@@ -4,11 +4,17 @@
 <<set $manIdentity to []>><<run $manIdentity.push("???")>>
 <<set $manFear to []>><<run $manFear.push("???")>>
 <</nobr>>
-<<goto "1.1">>
+<<goto "1.0">>
+
+:: 1.0
+<div id="dlg"><<include "1.1">></div>
+
 
 :: 1.1
-<div id="dlg"> ?Shivers 你感到秋天开始了。</div>
+ ?Shivers 你感到秋天开始了。
 <<dlg "是吗？你怎么知道这是“秋天开始了”，而不是冬天开始了，乃或者春天、夏天，至于三九天？" "1.1.1">>
+<<dlg "测试" "1.1.1.1">>
+<<dlg "测试2" "1.1.1.1">>
 
 :: 1.1.1
 ?Shivers 当然是秋天，你是不是有什么毛病？你忘了你早上踩到的那个西瓜皮吗？立秋了！每个人都有西瓜吃！除了你！
