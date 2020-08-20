@@ -5,3 +5,10 @@
 通情达理：<span id="TQDL">$TQDL</span> <<button "[+]">><<TQDL>><</button>> <<button "[-]">><<dTQDL>><</button>>
 博学多闻：<span id="BXDW">$BXDW</span> <<button "[+]">><<BXDW>><</button>> <<button "[-]">><<dBXDW>><</button>>
 
+你的身份是：
+
+    <span id ="playerIdentity">$playerIdentity</span>
+
+    <<playerIdentity "东洋留学生">><<playerIdentity "基督徒">>
+
+你的道具：

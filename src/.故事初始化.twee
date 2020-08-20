@@ -120,3 +120,16 @@
 	/*更新链接所对应的文章内容*/
 		<<append "#dlg" t8n>><<include $args[0]>><</append>>
 	<</linkreplace>></span><</widget>>
+
+<!--身份操作-->
+	<<widget playerIdentity>><<nobr>>
+		<<button $args[0]>>
+			<<if $playerIdentity.includes($args[0])>>
+				<<run $playerIdentity.delete($args[0])>>
+				<<replace "#playerIdentity">>$playerIdentity<</replace>>
+			<<else>>
+				<<run $playerIdentity.pushUnique($args[0])>>
+				<<replace "#playerIdentity">>$playerIdentity<</replace>>
+			<</if>>
+		<</button>>
+	<</nobr>><</widget>>
