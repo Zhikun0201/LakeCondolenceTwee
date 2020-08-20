@@ -597,14 +597,22 @@ macros.cyclinglink = {
     }
 };</script><tw-passagedata pid="1" name="StoryInit" tags="" position="100,100" size="100,100">&lt;!--自定义模板--&gt;
     &lt;&lt;script&gt;&gt;
-        /*你*/
+    /*你*/
 		Template.add(&#39;You&#39;, function(){
-			return &quot;@@text-indent:-15%;你@@ -&quot;
+			return &quot;@@text-indent:-15px;你@@ -&quot;
         })
-        /*天人感应*/
+    /*触觉*/
 		Template.add(&#39;Shivers&#39;, function () {
-			return &quot;@@color:#FF6666;text-indent:-15px;天人感应@@ -&quot;;
+			return &quot;@@color:#FF6666;text-indent:-15px;无形之触@@ -&quot;;
 		});
+	/*审视之眼*/
+		Template.add(&#39;Censorship&#39;, function(){
+			return &quot;@@color:#CC99CC;text-indent:-15px;审视之眼@@ -&quot;
+		}) 
+	/*百科全书*/
+		Template.add(&#39;Encyclopedia&#39;, function(){
+			return &quot;@@color:#3399FF;text-indent:-15px;百科全书@@ -&quot;
+		})
 	&lt;&lt;/script&gt;&gt;
 
 &lt;!--刷新功能--&gt;
@@ -753,9 +761,9 @@ Template.add(&#39;pirate&#39;, function () {
         &lt;&lt;set $manFear to []&gt;&gt;&lt;&lt;run $manFear.push(&quot;???&quot;)&gt;&gt;
     &lt;&lt;/nobr&gt;&gt;
 /* 跳转至正文 */
-    &lt;&lt;goto &quot;1.0&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="1.0" tags="" position="975,100" size="100,100">&lt;div id=&quot;dlg&quot;&gt;&lt;&lt;include &quot;1.1&quot;&gt;&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="9" name="1.1" tags="" position="1100,100" size="100,100">?Shivers 你感到秋天开始了。
-&lt;&lt;dlg &quot;是吗？你怎么知道这是“秋天开始了”，而不是冬天开始了，乃或者春天、夏天，至于三九天？&quot; &quot;1.1.1&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="1.1.1" tags="" position="1225,100" size="100,100">?Shivers 当然是秋天，你是不是有什么毛病？你忘了你早上踩到的那个西瓜皮吗？立秋了！每个人都有西瓜吃！除了你！
-&lt;&lt;ctn &quot;1.1.1.1&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="1.1.1.1" tags="" position="100,225" size="100,100">?Shivers 只有你，你踩着一块西瓜皮摔到了茅房里面，马桶被你铲了起来，在空中转了一圈半，屎和尿混杂着在你的眼前狂舞，你沾了一脸的屎，还半天找不到水洗干净。
+    &lt;&lt;goto &quot;人物.马五爷.正文框架&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="人物.马五爷.正文框架" tags="" position="975,100" size="100,100">&lt;div id=&quot;dlg&quot;&gt;&lt;&lt;include &quot;秋天开始了&quot;&gt;&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="9" name="秋天开始了" tags="" position="1100,100" size="100,100">?Shivers 秋天开始了。
+&lt;&lt;dlg &quot;是吗？你怎么知道这是*秋天*，而不是冬天，春天、夏天，乃或者三九天？&quot; &quot;当然是秋天&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="当然是秋天" tags="" position="1225,100" size="100,100">?Encyclopedia 当然是秋天。你忘了今早踩到的那个西瓜皮吗？这一天吃瓜是与往日不同的。他们会像往日一样把西瓜切开，像往日一样拿起来，像往日一样吐籽，最后像往日一样的把瓜皮扔在地上，这一切却和往日完全不一样，因为这一切都是为了这一天而特意做的。但总之，你踩到了一块西瓜皮，这是你这一天的开始。
+&lt;&lt;ctn &quot;你踩着那块西瓜皮径直滑向了茅房&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="你踩着那块西瓜皮径直滑向了茅房" tags="" position="100,225" size="100,100">?Censorship 你踩着那块西瓜皮径直滑向了茅房，那个准备用来浇地的可怜马桶被你从地面中央铲了起来，在空中转了一圈半，把一切都洒了出来，屎和尿混杂着在你的眼前狂舞，你沾了一脸的屎，还半天找不到水洗干净。
 &lt;&lt;dlg &quot;那我现在脸上还有吗？&quot; &quot;1.1.1.1.1&quot;&gt;&gt;
 &lt;&lt;dlg &quot;摩多摩多&quot; &quot;1.1.1.1.2&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="12" name="1.1.1.1.1" tags="" position="225,225" size="100,100">?Shivers 我还没写好</tw-passagedata><tw-passagedata pid="13" name="1.1.1.1.2" tags="" position="350,225" size="100,100">?Shivers 唉呀妈呀！真香！</tw-passagedata><tw-passagedata pid="14" name="试探" tags="" position="475,225" size="100,100">\&lt;&lt;if $manIdentity.includes(&quot;???&quot;)&gt;&gt;
 	?You （试探）还要再观察一下。你什么都看不出来。
