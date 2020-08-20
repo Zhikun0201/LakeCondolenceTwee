@@ -613,12 +613,16 @@ macros.cyclinglink = {
 		Template.add(&#39;Encyclopedia&#39;, function(){
 			return &quot;@@color:#3399FF;text-indent:-15px;百科全书@@ -&quot;
 		})
+	/*神机妙算*/
+		Template.add(&#39;Logic&#39;, function(){
+			return &quot;@@color:#CCCCFF;text-indent:-15px;神机妙算@@ -&quot;
+		})
 	&lt;&lt;/script&gt;&gt;
 
 &lt;!--刷新功能--&gt;
 	&lt;&lt;widget &quot;refresh&quot;&gt;&gt;&lt;&lt;silently&gt;&gt;
 		/*初始化*/
-		&lt;&lt;if $manIdentity.first() eq &quot;&quot;&gt;&gt;
+		&lt;&lt;if $manIdentity === []&gt;&gt;
 			&lt;&lt;run $manIdentity.pushUnique(&quot;???&quot;)&gt;&gt;
 		&lt;&lt;elseif $manIdentity.last() neq &quot;???&quot;&gt;&gt;
 			&lt;&lt;run $manIdentity.delete(&quot;???&quot;)&gt;&gt;
@@ -634,7 +638,7 @@ macros.cyclinglink = {
 	&lt;&lt;set $CYGS to 0&gt;&gt;
 	&lt;&lt;set $TQDL to 0&gt;&gt;
 	&lt;&lt;set $BXDW to 0&gt;&gt;
-
+	&lt;&lt;set $playerIdentity to []&gt;&gt;
 &lt;!--技能点操作--&gt;
 	&lt;&lt;nobr&gt;&gt;
 	/* 神机妙算 */
@@ -728,6 +732,21 @@ macros.cyclinglink = {
 				&lt;&lt;replace &quot;#playerIdentity&quot;&gt;&gt;$playerIdentity&lt;&lt;/replace&gt;&gt;
 			&lt;&lt;/if&gt;&gt;
 		&lt;&lt;/button&gt;&gt;
+	&lt;&lt;/nobr&gt;&gt;&lt;&lt;/widget&gt;&gt;
+
+	&lt;&lt;widget manIdentity&gt;&gt;&lt;&lt;nobr&gt;&gt;
+		&lt;&lt;if $manIdentity.includes($args[0])&gt;&gt;
+			&lt;&lt;set _stringNot to &quot;不是&quot;&gt;&gt;
+			&lt;&lt;button _stringNot+$args[0]&gt;&gt;&quot;&gt;&gt;
+				&lt;&lt;run $manIdentity.delete($args[0])&gt;&gt;
+				&lt;&lt;refresh&gt;&gt;
+			&lt;&lt;/button&gt;&gt;
+		&lt;&lt;else&gt;&gt;
+			&lt;&lt;button $args[0]&gt;&gt;
+				&lt;&lt;run $manIdentity.pushUnique($args[0])&gt;&gt;
+				&lt;&lt;refresh&gt;&gt;
+			&lt;&lt;/button&gt;&gt;
+		&lt;&lt;/if&gt;&gt;
 	&lt;&lt;/nobr&gt;&gt;&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="StoryMenu" tags="" position="225,100" size="100,100">&lt;&lt;link &quot;技能&quot;&gt;&gt;
   &lt;&lt;script&gt;&gt;
     Dialog.setup(&quot;Dialog&quot;);
@@ -771,8 +790,7 @@ Template.add(&#39;pirate&#39;, function () {
     &lt;&lt;nobr&gt;&gt;
         &lt;&lt;set $manName to &quot;马五爷&quot;, $manAge to &quot;???&quot;&gt;&gt;
         &lt;&lt;set $manIdentity to []&gt;&gt;&lt;&lt;run $manIdentity.push(&quot;???&quot;)&gt;&gt;
-        &lt;&lt;set $manFear to []&gt;&gt;&lt;&lt;run $manFear.push(&quot;???&quot;)&gt;&gt;
-        &lt;&lt;set $playerIdentity to []&gt;&gt;
+        &lt;&lt;set $manFear to []&gt;&gt;&lt;&lt;run $manFear.push(&quot;???&quot;)&gt;&gt;        
     &lt;&lt;/nobr&gt;&gt;
 /* 跳转至正文 */
     &lt;&lt;goto &quot;人物.马五爷.正文框架&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="人物.马五爷.正文框架" tags="" position="975,100" size="100,100">&lt;div id=&quot;dlg&quot;&gt;&lt;&lt;include &quot;秋天开始了&quot;&gt;&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="9" name="秋天开始了" tags="" position="1100,100" size="100,100">?Shivers 秋天开始了。
@@ -785,7 +803,8 @@ Template.add(&#39;pirate&#39;, function () {
     &lt;&lt;else&gt;&gt;
         &lt;&lt;dlg &quot;能再多来点吗？&quot; &quot;只要你想要，要多少都有&quot;&gt;&gt;
     &lt;&lt;/if&gt;&gt;
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="12" name="只要你想要，要多少都有" tags="" position="225,225" size="100,100">?Shivers 我还没写好</tw-passagedata><tw-passagedata pid="13" name="1.1.1.1.2" tags="" position="350,225" size="100,100">?Shivers 唉呀妈呀！真香！</tw-passagedata><tw-passagedata pid="14" name="试探" tags="" position="475,225" size="100,100">\&lt;&lt;if $manIdentity.includes(&quot;???&quot;)&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="12" name="只要你想要，要多少都有" tags="" position="225,225" size="100,100">?Logic 好办。只要你想要，要多少都有。
+&lt;&lt;ctn &quot;相信我，你不会在想要了&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="13" name="1.1.1.1.2" tags="" position="350,225" size="100,100">?Shivers 唉呀妈呀！真香！</tw-passagedata><tw-passagedata pid="14" name="试探" tags="" position="475,225" size="100,100">\&lt;&lt;if $manIdentity.includes(&quot;???&quot;)&gt;&gt;
 	?You （试探）还要再观察一下。你什么都看不出来。
 \&lt;&lt;/if&gt;&gt;
 \&lt;&lt;if $manIdentity.includes(&quot;洋教徒&quot;) &amp;&amp; $YangJiaoTu !=1&gt;&gt;
@@ -819,14 +838,14 @@ Template.add(&#39;pirate&#39;, function () {
 	&lt;&lt;/link&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="19" name="人物档案" tags="" position="1100,225" size="100,100">&lt;span id=&quot;人物档案&quot;&gt;
-*姓名：$manName
-*年龄：$manAge
-*身份：$manIdentity
-*担忧：$manFear
+&lt;b&gt;姓名&lt;/b&gt;：$manName
+&lt;b&gt;年龄&lt;/b&gt;：$manAge
+&lt;b&gt;身份&lt;/b&gt;：$manIdentity
+&lt;b&gt;担忧&lt;/b&gt;：$manFear
 
-我认为他……
-**&lt;&lt;include &quot;身份.买办&quot;&gt;&gt;
-**&lt;&lt;include &quot;身份.洋教徒&quot;&gt;&gt;
+我认为他是……
+&lt;&lt;manIdentity &quot;买办&quot;&gt;&gt; \
+&lt;&lt;manIdentity &quot;基督徒&quot;&gt;&gt; \
 &lt;/span&gt;</tw-passagedata><tw-passagedata pid="20" name="技能" tags="" position="1225,225" size="100,100">你的技能点：&lt;span id=&quot;skillPoint&quot;&gt;$skillPoint&lt;/span&gt;
 神机妙算：&lt;span id=&quot;SJMS&quot;&gt;$SJMS&lt;/span&gt; &lt;&lt;button &quot;[+]&quot;&gt;&gt;&lt;&lt;SJMS&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;&lt;button &quot;[-]&quot;&gt;&gt;&lt;&lt;dSJMS&gt;&gt;&lt;&lt;/button&gt;&gt;
 察言观色：&lt;span id=&quot;CYGS&quot;&gt;$CYGS&lt;/span&gt; &lt;&lt;button &quot;[+]&quot;&gt;&gt;&lt;&lt;CYGS&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;&lt;button &quot;[-]&quot;&gt;&gt;&lt;&lt;dCYGS&gt;&gt;&lt;&lt;/button&gt;&gt;
