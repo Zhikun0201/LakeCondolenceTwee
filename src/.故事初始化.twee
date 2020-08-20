@@ -21,6 +21,10 @@
 		Template.add('Logic', function(){
 			return "@@color:#CCCCFF;text-indent:-15px;神机妙算@@ -"
 		})
+	/*远日留痕*/
+		Template.add('Remains',function(){
+			return "@@color:#FFCC99;text-indent:-15px;远日留痕@@ -"
+		})
 	<</script>>
 
 <!--刷新功能-->
