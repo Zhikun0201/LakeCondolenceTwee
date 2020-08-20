@@ -13,6 +13,8 @@
 [[——开始|人物.马五爷]]
 </div>
 
+	<<set $playerIdentity to []>>
+    
 :: StoryTitle
 LackCondolence
 

@@ -42,7 +42,7 @@
 	<<set $CYGS to 0>>
 	<<set $TQDL to 0>>
 	<<set $BXDW to 0>>
-	<<set $playerIdentity to []>>
+
 <!--技能点操作-->
 	<<nobr>>
 	/* 神机妙算 */
