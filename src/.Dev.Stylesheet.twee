@@ -7,14 +7,6 @@ body {
 	background-color: #202020;
 	font-family:"微软雅黑", Times, serif;
 }
-
-#dlg {
-	
-}
-
-span{
-}
-
 /*****************************************************
 ! <<replacelink>> macro set for SugarCube 2.x 
 ******************************************************/

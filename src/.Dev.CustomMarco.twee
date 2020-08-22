@@ -1,32 +1,4 @@
-:: StoryInit
-<!--自定义模板-->
-    <<script>>
-    /*你*/
-		Template.add('You', function(){
-			return "@@text-indent:-15px;你@@ -"
-        })
-    /*触觉*/
-		Template.add('Shivers', function () {
-			return "@@color:#FF6666;text-indent:-15px;无形之触@@ -";
-		});
-	/*审视之眼*/
-		Template.add('Censorship', function(){
-			return "@@color:#CC99CC;text-indent:-15px;审视之眼@@ -"
-		}) 
-	/*百科全书*/
-		Template.add('Encyclopedia', function(){
-			return "@@color:#3399FF;text-indent:-15px;百科全书@@ -"
-		})
-	/*神机妙算*/
-		Template.add('Logic', function(){
-			return "@@color:#CCCCFF;text-indent:-15px;神机妙算@@ -"
-		})
-	/*远日留痕*/
-		Template.add('Remains',function(){
-			return "@@color:#FFCC99;text-indent:-15px;远日留痕@@ -"
-		})
-	<</script>>
-
+:: CustomMarco [widget]
 <!--刷新功能-->
 	<<widget "refresh">><<silently>>
 		/*初始化*/
@@ -39,13 +11,6 @@
 		/*更新侧边栏*/
 		<<replace "#人物档案">><<include "人物档案">><</replace>>
 	<</silently>><</widget>>
-
-<!--技能点初始化-->
-	<<set $skillPoint to 10>>
-	<<set $SJMS to 0>>
-	<<set $CYGS to 0>>
-	<<set $TQDL to 0>>
-	<<set $BXDW to 0>>
 
 <!--技能点操作-->
 	<<nobr>>
@@ -105,6 +70,13 @@
 
 <!--对话分支按钮-->
 	<<widget dlg>><span id="brcs"><<linkreplace $args[0]>>
+	/*变量检查*/
+		<<silently>>
+			<<if $args[2]>>
+				<<set _string.name to $args[2]>>
+                <<set $journey.$args[2]. to true>>
+			<</if>>
+		<</silently>>
 	/*清空选项区域内容*/
 		<<silently>>
 			<<remove "div>#brcs+br,div>#brcs">>
