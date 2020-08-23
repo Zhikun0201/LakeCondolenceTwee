@@ -25,6 +25,10 @@
 		Template.add('Remains',function(){
 			return "@@color:#FFCC99;text-indent:-15px;远日留痕@@ -"
 		})
+	/*复读机*/
+		Template.add('OCD', function(){
+			return "@@color:#FF9999;复读机@@ -"
+		})
 	<</script>>
 
 <!--技能点初始化-->
