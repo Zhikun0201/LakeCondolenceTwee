@@ -21,31 +21,31 @@
 :: StoryInit
 <!--自定义模板-->
     <<script>>
-    /*你*/
+    /* 你 */
 		Template.add('You', function(){
 			return "@@text-indent:-15px;你@@ -"
         })
-    /*触觉*/
+    /* 触觉 */
 		Template.add('Shivers', function () {
 			return "@@color:#FF6666;text-indent:-15px;无形之触@@ -";
 		});
-	/*审视之眼*/
+	/* 审视之眼 */
 		Template.add('Censorship', function(){
 			return "@@color:#CC99CC;text-indent:-15px;审视之眼@@ -"
 		}) 
-	/*百科全书*/
+	/* 百科全书 */
 		Template.add('Encyclopedia', function(){
 			return "@@color:#3399FF;text-indent:-15px;百科全书@@ -"
 		})
-	/*神机妙算*/
+	/* 神机妙算 */
 		Template.add('Logic', function(){
 			return "@@color:#CCCCFF;text-indent:-15px;神机妙算@@ -"
 		})
-	/*远日留痕*/
+	/* 远日留痕 */
 		Template.add('Remains',function(){
 			return "@@color:#FFCC99;text-indent:-15px;远日留痕@@ -"
 		})
-	/*复读机*/
+	/* 复读机 */
 		Template.add('OCD', function(){
 			return "@@color:#FF9999;复读机@@ -"
 		})
