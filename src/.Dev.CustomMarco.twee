@@ -73,8 +73,7 @@
 	/*变量检查*/
 		<<silently>>
 			<<if $args[2]>>
-				<<set _string.name to $args[2]>>
-                <<set $journey.$args[2]. to true>>
+					<<run $journey.set($args[2],$args[3])>>
 			<</if>>
 		<</silently>>
 	/*清空选项区域内容*/

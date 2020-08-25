@@ -1,3 +1,23 @@
+:: Start
+    <div style ="text-align:center;display: flex; justify-content: center; flex-direction: column; height: 400px;">
+
+        献给婧阳。
+
+        [[—— 序章|序章]]
+    </div>
+
+    <!--数据设置-->
+        <<silently>>
+		/* 玩家数据 */
+            <<set $playerIdentity to []>>
+		/* NPC数据 */
+            <<set $manName to "……", $manAge to "???">>
+            <<set $manIdentity to []>><<run $manIdentity.push("???")>>
+            <<set $manFear to []>><<run $manFear.push("???")>>
+		/* 故事变量 */
+            <<set $journey to new Map([["Love","JY"]])>>
+        <</silently>>
+
 :: StoryInit
 <!--自定义模板-->
     <<script>>

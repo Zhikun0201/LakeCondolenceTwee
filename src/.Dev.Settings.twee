@@ -6,21 +6,6 @@
         "start": "Start"
     }
 
-:: Start
-    <div style ="text-align:center;display: flex; justify-content: center; flex-direction: column; height: 400px;">
-
-        献给婧阳。
-
-        [[—— 序章|序章]]
-    </div>
-
-    <<silently>>
-        <<set $playerIdentity to []>>
-        <<set $manName to "……", $manAge to "???">>
-        <<set $manIdentity to []>><<run $manIdentity.push("???")>>
-        <<set $manFear to []>><<run $manFear.push("???")>>
-    <</silently>>
-
 :: StoryTitle
     太平湖下 LakeCondolence
 
