@@ -71,13 +71,12 @@
 <!--对话分支按钮-->
 	<<widget dlg>><span id="brcs">\
 	/* 状态检查 */
-	\<<nobr>>
-		<<if $newBrc === true>>
-			<hr>
-			<<set $newBrc = false>>
-		<</if>>
-	<</nobr>>\
-	<<linkreplace "$args[0]<br>">>
+		\<<nobr>>
+			<<if $newBrc === true>>
+				<hr><<set $newBrc = false>>
+			<</if>>
+		<</nobr>>\
+		<<linkreplace "<li style='padding:0em 1.5em'>$args[0]</li>">>
 	/* 修改状态 */
 		<<set $newBrc = true>>
 	/*变量检查*/
@@ -92,15 +91,16 @@
 			<<remove "span~br">>
 		<</silently>>
 	/*将选择了的选项转换为对话*/
-		<<append "#dlg">>\
-			@@color:grey;?You <<= $args[0]>>@@<</append>>
+		<<append "#dlg" t8n>>\
+			<p id="dlgp" style="color:grey">?You <<= $args[0]>></p><</append>>
 	/*更新链接所对应的文章内容*/
 		<<append "#dlg" t8n>>
 			<p id="dlgp"><<include $args[1]>></p><</append>>
+		<<run window.scrollTo(0,document.body.scrollHeight)>>
 	<</linkreplace>></span><</widget>>
 
 <!--继续按钮-->
-	<<widget ctn>><span id="brcs"><<linkreplace "继续">>\
+	<<widget ctn>><span id="brcs"><hr><<linkreplace "继续">>\
 	/* 状态检查 */
 	/*清空选项区域内容*/
 		<<silently>>
@@ -109,6 +109,7 @@
 		<</silently>>
 	/*更新链接所对应的文章内容*/
 		<<append "#dlg" t8n>><p id="dlgp"><<include $args[0]>></p><</append>>
+		<<run window.scrollTo(0,document.body.scrollHeight)>>
 	<</linkreplace>></span><</widget>>
 
 <!--身份操作-->

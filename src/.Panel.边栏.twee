@@ -1,0 +1,11 @@
+:: StoryCaption
+
+:: PassageFooter
+<<if tags().includes("bbar")>>
+<div id="bottombar"><div id="bbblock"><div id="bbtext">
+试探
+质问
+恫吓
+恭维
+坦言
+</div></div></div><</if>>

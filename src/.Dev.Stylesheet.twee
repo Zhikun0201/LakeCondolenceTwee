@@ -7,11 +7,20 @@ body {
 	font-family:"微软雅黑", Times, serif;
 	color: #d8d8d8;
 	background-color: #202020;
+	padding:1.5em;
 }
 
-#dlgp{
-	text-indent: -1.5em;
+br {
+	display: block;
+	margin: 100px 0;
 }
+
+#dlgp {
+	text-indent: -1.5em;
+	line-height: 150%;
+	margin:10px auto;
+}
+
 
 
 /*****************************************************
@@ -28,3 +37,43 @@ body {
 	position: absolute;
 	opacity: 0;
 }
+
+/* Bottom Bar styling - Start */
+#bottombar {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: #333;
+	border-top: 1px solid #444;
+	box-shadow: 0 0 10px 0 #333;
+}
+#bbblock {
+	margin-left: 20em;
+	margin-right: 2.5em;
+	-o-transition: margin .2s ease-in;
+    transition: margin .2s ease-in;
+}
+#bbtext {
+	text-align: center;
+    max-width: 54em;
+    margin: 0 auto;
+}
+#ui-bar.stowed~#story #bbblock {
+	margin-left: 4.5em;
+}
+@media screen and (max-width: 1136px) {
+	#bbblock {
+		margin-left: 19em;
+		margin-right: 1.5em;
+	}
+	#ui-bar.stowed~#story #bbblock {
+		margin-left: 3.5em;
+	}
+}
+@media screen and (max-width: 768px) {
+	#bbblock {
+		margin-left: 3.5em;
+	}
+}
+/* Bottom Bar styling - End */

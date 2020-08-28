@@ -106,11 +106,20 @@ body {
 	font-family:"微软雅黑", Times, serif;
 	color: #d8d8d8;
 	background-color: #202020;
+	padding:1.5em;
 }
 
-p{
-	text-indent: -1em;
+br {
+	display: block;
+	margin: 100px 0;
 }
+
+#dlgp {
+	text-indent: -1.5em;
+	line-height: 150%;
+	margin:10px auto;
+}
+
 
 
 /*****************************************************
@@ -126,7 +135,47 @@ p{
 .revision-span-out {
 	position: absolute;
 	opacity: 0;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript">/*************************************************
+}
+
+/* Bottom Bar styling - Start */
+#bottombar {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: #333;
+	border-top: 1px solid #444;
+	box-shadow: 0 0 10px 0 #333;
+}
+#bbblock {
+	margin-left: 20em;
+	margin-right: 2.5em;
+	-o-transition: margin .2s ease-in;
+    transition: margin .2s ease-in;
+}
+#bbtext {
+	text-align: center;
+    max-width: 54em;
+    margin: 0 auto;
+}
+#ui-bar.stowed~#story #bbblock {
+	margin-left: 4.5em;
+}
+@media screen and (max-width: 1136px) {
+	#bbblock {
+		margin-left: 19em;
+		margin-right: 1.5em;
+	}
+	#ui-bar.stowed~#story #bbblock {
+		margin-left: 3.5em;
+	}
+}
+@media screen and (max-width: 768px) {
+	#bbblock {
+		margin-left: 3.5em;
+	}
+}
+/* Bottom Bar styling - End */</style><script role="script" id="twine-user-script" type="text/twine-javascript">/*************************************************
  *  chs.js – 简体中文, by: Liyro Pen. 
  * | Copyright © 2017 Thomas Michael Edwards 
  * | <thomasmedwards@gmail.com>. 
@@ -666,15 +715,14 @@ macros.cyclinglink = {
 &lt;!--对话分支按钮--&gt;
 	&lt;&lt;widget dlg&gt;&gt;&lt;span id=&quot;brcs&quot;&gt;\
 	/* 状态检查 */
-	\&lt;&lt;nobr&gt;&gt;
-		&lt;&lt;if _newBrc === true&gt;&gt;
-			&lt;hr&gt;
-			&lt;&lt;set _newBrc = false&gt;&gt;
-		&lt;&lt;/if&gt;&gt;
-	&lt;&lt;/nobr&gt;&gt;\
-	&lt;&lt;linkreplace &quot;$args[0]&lt;br&gt;&quot;&gt;&gt;
+		\&lt;&lt;nobr&gt;&gt;
+			&lt;&lt;if $newBrc === true&gt;&gt;
+				&lt;hr&gt;&lt;&lt;set $newBrc = false&gt;&gt;
+			&lt;&lt;/if&gt;&gt;
+		&lt;&lt;/nobr&gt;&gt;\
+		&lt;&lt;linkreplace &quot;&lt;li style=&#39;padding:0em 1.5em&#39;&gt;$args[0]&lt;/li&gt;&quot;&gt;&gt;
 	/* 修改状态 */
-		&lt;&lt;set _newBrc = true&gt;&gt;
+		&lt;&lt;set $newBrc = true&gt;&gt;
 	/*变量检查*/
 		&lt;&lt;silently&gt;&gt;
 			&lt;&lt;if $args[2]&gt;&gt;
@@ -687,29 +735,25 @@ macros.cyclinglink = {
 			&lt;&lt;remove &quot;span~br&quot;&gt;&gt;
 		&lt;&lt;/silently&gt;&gt;
 	/*将选择了的选项转换为对话*/
-		&lt;&lt;append &quot;#dlg&quot;&gt;&gt;\
-			@@color:grey;?You &lt;&lt;= $args[0]&gt;&gt;@@&lt;&lt;/append&gt;&gt;
+		&lt;&lt;append &quot;#dlg&quot; t8n&gt;&gt;\
+			&lt;p id=&quot;dlgp&quot; style=&quot;color:grey&quot;&gt;?You &lt;&lt;= $args[0]&gt;&gt;&lt;/p&gt;&lt;&lt;/append&gt;&gt;
 	/*更新链接所对应的文章内容*/
 		&lt;&lt;append &quot;#dlg&quot; t8n&gt;&gt;
-			&lt;p&gt;&lt;&lt;include $args[1]&gt;&gt;&lt;/p&gt;&lt;&lt;/append&gt;&gt;
+			&lt;p id=&quot;dlgp&quot;&gt;&lt;&lt;include $args[1]&gt;&gt;&lt;/p&gt;&lt;&lt;/append&gt;&gt;
+		&lt;&lt;run window.scrollTo(0,document.body.scrollHeight)&gt;&gt;
 	&lt;&lt;/linkreplace&gt;&gt;&lt;/span&gt;&lt;&lt;/widget&gt;&gt;
 
 &lt;!--继续按钮--&gt;
-	&lt;&lt;widget ctn&gt;&gt;&lt;span id=&quot;brcs&quot;&gt;&lt;&lt;linkreplace &quot;继续&quot;&gt;&gt;\
+	&lt;&lt;widget ctn&gt;&gt;&lt;span id=&quot;brcs&quot;&gt;&lt;hr&gt;&lt;&lt;linkreplace &quot;继续&quot;&gt;&gt;\
 	/* 状态检查 */
-	\&lt;&lt;nobr&gt;&gt;
-		&lt;&lt;if _newBrc === true&gt;&gt;
-			&lt;hr&gt;
-			&lt;&lt;set _newBrc = false&gt;&gt;
-		&lt;&lt;/if&gt;&gt;
-	&lt;&lt;/nobr&gt;&gt;\
 	/*清空选项区域内容*/
 		&lt;&lt;silently&gt;&gt;
 			&lt;&lt;remove &quot;p&gt;br,#brcs&quot;&gt;&gt;
 			&lt;&lt;remove &quot;span~br&quot;&gt;&gt;
 		&lt;&lt;/silently&gt;&gt;
 	/*更新链接所对应的文章内容*/
-		&lt;&lt;append &quot;#dlg&quot; t8n&gt;&gt;&lt;p&gt;&lt;&lt;include $args[0]&gt;&gt;&lt;/p&gt;&lt;&lt;/append&gt;&gt;
+		&lt;&lt;append &quot;#dlg&quot; t8n&gt;&gt;&lt;p id=&quot;dlgp&quot;&gt;&lt;&lt;include $args[0]&gt;&gt;&lt;/p&gt;&lt;&lt;/append&gt;&gt;
+		&lt;&lt;run window.scrollTo(0,document.body.scrollHeight)&gt;&gt;
 	&lt;&lt;/linkreplace&gt;&gt;&lt;/span&gt;&lt;&lt;/widget&gt;&gt;
 
 &lt;!--身份操作--&gt;
@@ -747,7 +791,7 @@ macros.cyclinglink = {
 我认为他是……
 &lt;&lt;manIdentity &quot;买办&quot;&gt;&gt; \
 &lt;&lt;manIdentity &quot;基督徒&quot;&gt;&gt; \
-&lt;/span&gt;</tw-passagedata><tw-passagedata pid="4" name="StoryCaption" tags="" position="475,100" size="100,100"></tw-passagedata><tw-passagedata pid="5" name="PassageFooter" tags="" position="600,100" size="100,100"></tw-passagedata><tw-passagedata pid="6" name="技能" tags="" position="725,100" size="100,100">你的技能点：&lt;span id=&quot;skillPoint&quot;&gt;$skillPoint&lt;/span&gt;
+&lt;/span&gt;</tw-passagedata><tw-passagedata pid="4" name="技能" tags="" position="475,100" size="100,100">你的技能点：&lt;span id=&quot;skillPoint&quot;&gt;$skillPoint&lt;/span&gt;
 神机妙算：&lt;span id=&quot;SJMS&quot;&gt;$SJMS&lt;/span&gt; &lt;&lt;button &quot;[+]&quot;&gt;&gt;&lt;&lt;SJMS&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;&lt;button &quot;[-]&quot;&gt;&gt;&lt;&lt;dSJMS&gt;&gt;&lt;&lt;/button&gt;&gt;
 察言观色：&lt;span id=&quot;CYGS&quot;&gt;$CYGS&lt;/span&gt; &lt;&lt;button &quot;[+]&quot;&gt;&gt;&lt;&lt;CYGS&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;&lt;button &quot;[-]&quot;&gt;&gt;&lt;&lt;dCYGS&gt;&gt;&lt;&lt;/button&gt;&gt;
 通情达理：&lt;span id=&quot;TQDL&quot;&gt;$TQDL&lt;/span&gt; &lt;&lt;button &quot;[+]&quot;&gt;&gt;&lt;&lt;TQDL&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;&lt;button &quot;[-]&quot;&gt;&gt;&lt;&lt;dTQDL&gt;&gt;&lt;&lt;/button&gt;&gt;
@@ -759,7 +803,14 @@ macros.cyclinglink = {
 
     &lt;&lt;playerIdentity &quot;东洋留学生&quot;&gt;&gt;&lt;&lt;playerIdentity &quot;基督徒&quot;&gt;&gt;
 
-你的道具：</tw-passagedata><tw-passagedata pid="7" name="江湖金口诀" tags="" position="850,100" size="100,100"></tw-passagedata><tw-passagedata pid="8" name="Start" tags="" position="975,100" size="100,100">&lt;div style =&quot;text-align:center;display: flex; justify-content: center; flex-direction: column; height: 400px;&quot;&gt;
+你的道具：</tw-passagedata><tw-passagedata pid="5" name="江湖金口诀" tags="" position="600,100" size="100,100"></tw-passagedata><tw-passagedata pid="6" name="StoryCaption" tags="" position="725,100" size="100,100"></tw-passagedata><tw-passagedata pid="7" name="PassageFooter" tags="" position="850,100" size="100,100">&lt;&lt;if tags().includes(&quot;bbar&quot;)&gt;&gt;
+&lt;div id=&quot;bottombar&quot;&gt;&lt;div id=&quot;bbblock&quot;&gt;&lt;div id=&quot;bbtext&quot;&gt;
+试探
+质问
+恫吓
+恭维
+坦言
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="Start" tags="" position="975,100" size="100,100">&lt;div style =&quot;text-align:center;display: flex; justify-content: center; flex-direction: column; height: 400px;&quot;&gt;
 
         献给婧阳。
 
@@ -777,7 +828,7 @@ macros.cyclinglink = {
 		/* 故事变量 */
             &lt;&lt;set $journey to new Map([[&quot;Love&quot;,&quot;JY&quot;]])&gt;&gt;
 		/* 分支 */
-			&lt;&lt;set _newBrc to true&gt;&gt;
+			&lt;&lt;set $newBrc to true&gt;&gt;
         &lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="StoryInit" tags="" position="1100,100" size="100,100">&lt;!--自定义模板--&gt;
     &lt;&lt;script&gt;&gt;
     /* 你 */
@@ -890,17 +941,16 @@ Template.add(&#39;pirate&#39;, function () {
 		&lt;&lt;run $manIdentity.pushUnique(&quot;洋教徒&quot;)&gt;&gt;&lt;&lt;refresh&gt;&gt;
 	&lt;&lt;/link&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="序章" tags="" position="975,225" size="100,100">&lt;div id=&quot;dlg&quot;&gt;&lt;p&gt;&lt;&lt;include &quot;开始&quot;&gt;&gt;&lt;/p&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="19" name="备注" tags="" position="1100,225" size="100,100">时间：1898年8月7日（大清光绪二十四年 戊戌年六月二十）</tw-passagedata><tw-passagedata pid="20" name="开始" tags="" position="1225,225" size="100,100">?Shivers 你的汗毛在颤抖。冷气爬上皮肤，钻进你的知觉中。秋天开始了。
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="序章" tags="" position="975,225" size="100,100">&lt;div id=&quot;dlg&quot;&gt;&lt;p id=&quot;dlgp&quot;&gt;&lt;&lt;include &quot;开始&quot;&gt;&gt;&lt;/p&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="19" name="备注" tags="" position="1100,225" size="100,100">时间：1898年8月7日（大清光绪二十四年 戊戌年六月二十）</tw-passagedata><tw-passagedata pid="20" name="开始" tags="" position="1225,225" size="100,100">?Shivers 你的汗毛在颤抖。冷气爬上皮肤，钻进你的知觉中。秋天开始了。
 &lt;&lt;dlg &quot;是吗？你怎么知道这是*秋天*，而不是冬天，春天、夏天，乃或者三九天？&quot; &quot;当然是秋天&quot;&gt;&gt;
 &lt;&lt;dlg &quot;秋天的意义是什么？&quot; &quot;秋天的意义&quot;&gt;&gt;
-&lt;&lt;dlg &quot;秋天！国庆节！中秋节！长达八天的假期和足足七天的调休工作日！&quot; &quot;长达八天的假期和足足七天的调休工作日&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="当然是秋天" tags="" position="100,350" size="100,100">?Censorship 你在说peach？你早上刚刚踩到一片西瓜皮上，你会在别的季节里踩到西瓜皮吗？
+&lt;&lt;dlg &quot;秋天！国庆节！中秋节！长达八天的假期和足足七天的调休工作日！&quot; &quot;长达八天的假期和足足七天的调休工作日&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="当然是秋天" tags="" position="100,350" size="100,100">?Censorship 你在说什么？你早上刚刚踩到一片西瓜皮上，你会在别的季节里踩到西瓜皮吗？
 &lt;&lt;ctn &quot;你之所以会踩到它&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="22" name="你之所以会踩到它" tags="" position="225,350" size="100,100">?Logic 一片象征秋天的西瓜皮。
 &lt;&lt;ctn &quot;这一天吃西瓜是与往日不同的&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="这一天吃西瓜是与往日不同的" tags="" position="350,350" size="100,100">?Encyclopedia 西瓜是立秋的节庆仪品。为了庆祝新季节的到来，他们会把西瓜像往日一样切开，像往日一样摆好，像往日一样吐籽，最后像往日一样，把瓜皮扔在地上。
 &lt;&lt;ctn &quot;但这一切和往日却完全不一样&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="但这一切和往日却完全不一样" tags="" position="475,350" size="100,100">?Censorship 但一切都和往日不一样。
 &lt;&lt;ctn &quot;总而言之，你踩到了一块西瓜皮&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="25" name="总而言之，你踩到了一块西瓜皮" tags="" position="600,350" size="100,100">?Censorship 总而言之，你踩到了一块西瓜皮，这是你这一天的开始。
 &lt;&lt;ctn &quot;你踩着那块西瓜皮径直滑向了茅房&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="26" name="你踩着那块西瓜皮径直滑向了茅房" tags="" position="725,350" size="100,100">?Remains 你踩着那块西瓜皮径直滑向了茅房，那个准备用来浇地的可怜马桶被你从地面中央铲了起来，在空中转了一圈半，把一切都洒了出来，屎和尿混杂着在你的眼前狂舞，你沾了一脸的屎，还半天找不到水洗干净。
-&lt;&lt;dlg &quot;这点小事对我算不了什么，一个男人应该光明磊落地面对这一切！&quot;&gt;&gt;
-&lt;&lt;dlg &quot;我的脸又黏又滑，还有股奇怪的味道。&quot; &quot;只要你想，要多少都有&quot; &quot;facedidit&quot; &quot;true&quot;&gt;&gt;
+&lt;&lt;dlg &quot;我的脸又黏又滑，还有股奇怪的味道。&quot; &quot;相信我，你不会再想要了&quot;&gt;&gt;
 &lt;&lt;nobr&gt;&gt;
     &lt;&lt;if $playerIdentity.includes(&quot;东洋留学生&quot;)&gt;&gt;
         &lt;&lt;dlg &quot;摩多摩多&quot; &quot;只要你想，要多少都有&quot;&gt;&gt;
