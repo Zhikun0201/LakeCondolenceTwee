@@ -108,6 +108,10 @@ body {
 	background-color: #202020;
 }
 
+#dlgp{
+	text-indent: -1.5em;
+}
+
 
 /*****************************************************
 ! <<replacelink>> macro set for SugarCube 2.x 
@@ -660,7 +664,17 @@ macros.cyclinglink = {
 		&lt;&lt;/nobr&gt;&gt;
 
 &lt;!--对话分支按钮--&gt;
-	&lt;&lt;widget dlg&gt;&gt;&lt;span id=&quot;brcs&quot;&gt;&lt;&lt;linkreplace $args[0]&gt;&gt;
+	&lt;&lt;widget dlg&gt;&gt;&lt;span id=&quot;brcs&quot;&gt;\
+	/* 状态检查 */
+	\&lt;&lt;nobr&gt;&gt;
+		&lt;&lt;if $newBrc === true&gt;&gt;
+			&lt;hr&gt;
+			&lt;&lt;set $newBrc = false&gt;&gt;
+		&lt;&lt;/if&gt;&gt;
+	&lt;&lt;/nobr&gt;&gt;\
+	&lt;&lt;linkreplace &quot;$args[0]&lt;br&gt;&quot;&gt;&gt;
+	/* 修改状态 */
+		&lt;&lt;set $newBrc = true&gt;&gt;
 	/*变量检查*/
 		&lt;&lt;silently&gt;&gt;
 			&lt;&lt;if $args[2]&gt;&gt;
@@ -669,26 +683,27 @@ macros.cyclinglink = {
 		&lt;&lt;/silently&gt;&gt;
 	/*清空选项区域内容*/
 		&lt;&lt;silently&gt;&gt;
-			&lt;&lt;remove &quot;div&gt;#brcs+br,div&gt;#brcs&quot;&gt;&gt;
-			&lt;&lt;remove &quot;span&gt;#brcs+br,span&gt;#brcs&quot;&gt;&gt;
+			&lt;&lt;remove &quot;p&gt;br,#brcs&quot;&gt;&gt;
+			&lt;&lt;remove &quot;span~br&quot;&gt;&gt;
 		&lt;&lt;/silently&gt;&gt;
 	/*将选择了的选项转换为对话*/
-		&lt;&lt;append &quot;#dlg&quot;&gt;&gt;
+		&lt;&lt;append &quot;#dlg&quot;&gt;&gt;\
 			@@color:grey;?You &lt;&lt;= $args[0]&gt;&gt;@@&lt;&lt;/append&gt;&gt;
 	/*更新链接所对应的文章内容*/
 		&lt;&lt;append &quot;#dlg&quot; t8n&gt;&gt;
-			&lt;&lt;include $args[1]&gt;&gt;&lt;&lt;/append&gt;&gt;
+			&lt;p id=&quot;dlgp&quot;&gt;&lt;&lt;include $args[1]&gt;&gt;&lt;/p&gt;&lt;&lt;/append&gt;&gt;
 	&lt;&lt;/linkreplace&gt;&gt;&lt;/span&gt;&lt;&lt;/widget&gt;&gt;
 
 &lt;!--继续按钮--&gt;
-	&lt;&lt;widget ctn&gt;&gt;&lt;span id=&quot;brcs&quot;&gt;&lt;&lt;linkreplace &quot;继续&quot;&gt;&gt;
+	&lt;&lt;widget ctn&gt;&gt;&lt;span id=&quot;brcs&quot;&gt;&lt;&lt;linkreplace &quot;继续&quot;&gt;&gt;\
+	/* 状态检查 */
 	/*清空选项区域内容*/
 		&lt;&lt;silently&gt;&gt;
-			&lt;&lt;remove &quot;div&gt;#brcs+br,div&gt;#brcs&quot;&gt;&gt;
-			&lt;&lt;remove &quot;span&gt;#brcs+br,span&gt;#brcs&quot;&gt;&gt;
+			&lt;&lt;remove &quot;p&gt;br,#brcs&quot;&gt;&gt;
+			&lt;&lt;remove &quot;span~br&quot;&gt;&gt;
 		&lt;&lt;/silently&gt;&gt;
 	/*更新链接所对应的文章内容*/
-		&lt;&lt;append &quot;#dlg&quot; t8n&gt;&gt;&lt;&lt;include $args[0]&gt;&gt;&lt;&lt;/append&gt;&gt;
+		&lt;&lt;append &quot;#dlg&quot; t8n&gt;&gt;&lt;p id=&quot;dlgp&quot;&gt;&lt;&lt;include $args[0]&gt;&gt;&lt;/p&gt;&lt;&lt;/append&gt;&gt;
 	&lt;&lt;/linkreplace&gt;&gt;&lt;/span&gt;&lt;&lt;/widget&gt;&gt;
 
 &lt;!--身份操作--&gt;
@@ -755,6 +770,8 @@ macros.cyclinglink = {
             &lt;&lt;set $manFear to []&gt;&gt;&lt;&lt;run $manFear.push(&quot;???&quot;)&gt;&gt;
 		/* 故事变量 */
             &lt;&lt;set $journey to new Map([[&quot;Love&quot;,&quot;JY&quot;]])&gt;&gt;
+		/* 分支 */
+			&lt;&lt;set $newBrc to true&gt;&gt;
         &lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="StoryInit" tags="" position="1100,100" size="100,100">&lt;!--自定义模板--&gt;
     &lt;&lt;script&gt;&gt;
     /* 你 */
@@ -867,7 +884,7 @@ Template.add(&#39;pirate&#39;, function () {
 		&lt;&lt;run $manIdentity.pushUnique(&quot;洋教徒&quot;)&gt;&gt;&lt;&lt;refresh&gt;&gt;
 	&lt;&lt;/link&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="序章" tags="" position="975,225" size="100,100">&lt;div id=&quot;dlg&quot;&gt;&lt;&lt;include &quot;开始&quot;&gt;&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="19" name="备注" tags="" position="1100,225" size="100,100">时间：1898年8月7日（大清光绪二十四年 戊戌年六月二十）</tw-passagedata><tw-passagedata pid="20" name="开始" tags="" position="1225,225" size="100,100">?Shivers 你的汗毛在颤抖。冷气爬上皮肤，钻进你的知觉中。秋天开始了。
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="序章" tags="" position="975,225" size="100,100">&lt;div id=&quot;dlg&quot;&gt;&lt;p id=&quot;dlgp&quot;&gt;&lt;&lt;include &quot;开始&quot;&gt;&gt;&lt;/p&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="19" name="备注" tags="" position="1100,225" size="100,100">时间：1898年8月7日（大清光绪二十四年 戊戌年六月二十）</tw-passagedata><tw-passagedata pid="20" name="开始" tags="" position="1225,225" size="100,100">?Shivers 你的汗毛在颤抖。冷气爬上皮肤，钻进你的知觉中。秋天开始了。
 &lt;&lt;dlg &quot;是吗？你怎么知道这是*秋天*，而不是冬天，春天、夏天，乃或者三九天？&quot; &quot;当然是秋天&quot;&gt;&gt;
 &lt;&lt;dlg &quot;秋天的意义是什么？&quot; &quot;秋天的意义&quot;&gt;&gt;
 &lt;&lt;dlg &quot;秋天！国庆节！中秋节！长达八天的假期和足足七天的调休工作日！&quot; &quot;长达八天的假期和足足七天的调休工作日&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="当然是秋天" tags="" position="100,350" size="100,100">?Censorship 你在说peach？你早上刚刚踩到一片西瓜皮上，你会在别的季节里踩到西瓜皮吗？
@@ -877,7 +894,7 @@ Template.add(&#39;pirate&#39;, function () {
 &lt;&lt;ctn &quot;总而言之，你踩到了一块西瓜皮&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="25" name="总而言之，你踩到了一块西瓜皮" tags="" position="600,350" size="100,100">?Censorship 总而言之，你踩到了一块西瓜皮，这是你这一天的开始。
 &lt;&lt;ctn &quot;你踩着那块西瓜皮径直滑向了茅房&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="26" name="你踩着那块西瓜皮径直滑向了茅房" tags="" position="725,350" size="100,100">?Remains 你踩着那块西瓜皮径直滑向了茅房，那个准备用来浇地的可怜马桶被你从地面中央铲了起来，在空中转了一圈半，把一切都洒了出来，屎和尿混杂着在你的眼前狂舞，你沾了一脸的屎，还半天找不到水洗干净。
 &lt;&lt;dlg &quot;这点小事对我算不了什么，一个男人应该光明磊落地面对这一切！&quot;&gt;&gt;
-&lt;&lt;dlg &quot;我感觉我的脸又黏又滑，还有股奇怪的味道。&quot; &quot;只要你想，要多少都有&quot; &quot;facedidit&quot; &quot;true&quot;&gt;&gt;
+&lt;&lt;dlg &quot;我的脸又黏又滑，还有股奇怪的味道。&quot; &quot;只要你想，要多少都有&quot; &quot;facedidit&quot; &quot;true&quot;&gt;&gt;
 &lt;&lt;nobr&gt;&gt;
     &lt;&lt;if $playerIdentity.includes(&quot;东洋留学生&quot;)&gt;&gt;
         &lt;&lt;dlg &quot;摩多摩多&quot; &quot;只要你想，要多少都有&quot;&gt;&gt;
@@ -899,7 +916,7 @@ Template.add(&#39;pirate&#39;, function () {
 &lt;&lt;dlg &quot;会不会存在一种可能——屎本位说？我是想，*屎*才是人类的本源。虽然一切生物都可以轻松地拉出一泡屎，但你懂的，只有人类会把屎当成有价值的东西。屎需要人们为之付出努力，人类也总是为之产生期待。&quot; &quot;这构成了一种利益关系&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="33" name="这构成了一种利益关系" tags="" position="350,475" size="100,100">?Encyclopedia 这构成了一种利益交换关系。也就是说，屎是一种等价交换物。人们为屎赋予价值，把它给出去，并期待能收回相应价值的东西。然而历史上的无数冲突都曾围绕这一关系而展开，——当人们发现自己的付出无法获得相应的回报时。
 &lt;&lt;dlg &quot;可屎不应该是不求回报的吗？&quot; &quot;不求回报，无私奉献。&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="不求回报，无私奉献。" tags="" position="475,475" size="100,100">?OCD 不求回报，无私奉献。
 &lt;&lt;ctn &quot;别再伤心了&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="35" name="别再伤心了" tags="" position="600,475" size="100,100">?Censorship 曾经有过屎，后来失去了，总比从未有过的要好。
-&lt;&lt;ctn &quot;越来也不懂&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="36" name="越来越不懂" tags="" position="725,475" size="100,100">?OCD 得不到的无所谓，就算是自我安慰，没必要伤悲。
+&lt;&lt;ctn &quot;越来越不懂&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="36" name="越来越不懂" tags="" position="725,475" size="100,100">?OCD 得不到的无所谓，就算是自我安慰，没必要伤悲。
 &lt;&lt;ctn &quot;你的心脏突生剧痛&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="37" name="你的心脏突生剧痛" tags="" position="850,475" size="100,100">?Censorship 你突然感到一阵反胃，胸腔中的液体正忍不住向上翻涌。
 &lt;&lt;ctn &quot;是时候赚点钱了&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="38" name="是时候赚点钱了" tags="" position="975,475" size="100,100">?Censorship 别再想下去了，是时候赚钱了。</tw-passagedata><tw-passagedata pid="39" name="秋天的意义" tags="" position="1100,475" size="100,100">?Encyclopedia 秋天从地球和太阳的运动关系中产生。太阳直射地球的投射点将会在夏至日到来后开始向南半球移动，原本笼罩北京的副热带高气压带也将随之离开，去往无情的南方。北方的冷空气紧随其后，降临到这片土地上，带来降水，然后是寒冷。由于热胀冷缩的原因，这时的空气密度会变大，也就会变沉，会挤压在地面上不高的半空中，雨水减少，空气变晴，人类开始生活在压力当中。不过不久，就会变得更加寒冷，因为秋天只会持续十日左右，可人们却会把他划归为90天。
 &lt;&lt;dlg &quot;这真是太棒了，老兄。&quot; &quot;没有比这更棒的事情了&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="40" name="没有比这更棒的事情了" tags="" position="1225,475" size="100,100">?Censorship 没有比这更棒的事情了。</tw-passagedata><tw-passagedata pid="41" name="长达八天的假期和足足七天的调休工作日" tags="" position="100,600" size="100,100">?Censorship 冷静。还没到那种时候。
