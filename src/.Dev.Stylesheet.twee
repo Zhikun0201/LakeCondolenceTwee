@@ -9,6 +9,10 @@ body {
 	background-color: #202020;
 }
 
+#dlgp{
+	text-indent: -1.5em;
+}
+
 
 /*****************************************************
 ! <<replacelink>> macro set for SugarCube 2.x 

@@ -16,6 +16,8 @@
             <<set $manFear to []>><<run $manFear.push("???")>>
 		/* 故事变量 */
             <<set $journey to new Map([["Love","JY"]])>>
+		/* 分支 */
+			<<set $newBrc to true>>
         <</silently>>
 
 :: StoryInit
