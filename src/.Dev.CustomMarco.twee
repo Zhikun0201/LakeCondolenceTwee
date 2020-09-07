@@ -1,4 +1,5 @@
 :: CustomMarco [widget]
+
 /* #region 刷新功能 */
 	<<widget "refresh">><<silently>>
 		/*初始化*/
