@@ -1,5 +1,5 @@
 :: CustomMarco [widget]
-<!--刷新功能-->
+/* #region 刷新功能 */
 	<<widget "refresh">><<silently>>
 		/*初始化*/
 		<<if $manIdentity === []>>
@@ -11,10 +11,11 @@
 		/*更新侧边栏*/
 		<<replace "#人物档案">><<include "人物档案">><</replace>>
 	<</silently>><</widget>>
+/* #endregion */
 
-<!--技能点操作-->
+/* #region 技能点操作 */
 	<<nobr>>
-	/* 神机妙算 */
+	/* #region 神机妙算 */
 		<<widget SJMS>>
 			<<set $SJMS++ >>
 			<<set $skillPoint-- >>
@@ -27,7 +28,8 @@
 			<<replace "#skillPoint">>$skillPoint<</replace>>
 			<<replace "#SJMS">>$SJMS<</replace>>
 		<</widget>>
-	/* 察言观色 */
+	/* #endregion */
+	/* #region 察言观色 */
 		<<widget CYGS>>
 			<<set $CYGS++ >>
 			<<set $skillPoint-- >>
@@ -40,7 +42,8 @@
 			<<replace "#skillPoint">>$skillPoint<</replace>>
 			<<replace "#CYGS">>$CYGS<</replace>>
 		<</widget>>
-	/* 通情达理 */
+	/* #endregion */
+	/* #region 通情达理 */
 		<<widget TQDL>>
 			<<set $TQDL++ >>
 			<<set $skillPoint-- >>
@@ -53,7 +56,8 @@
 			<<replace "#skillPoint">>$skillPoint<</replace>>
 			<<replace "#TQDL">>$TQDL<</replace>>
 		<</widget>>
-	/* 博学多闻 */
+	/* #endregion */
+	/* #region 博学多闻 */
 		<<widget BXDW>>
 			<<set $BXDW++ >>
 			<<set $skillPoint-- >>
@@ -66,9 +70,11 @@
 			<<replace "#skillPoint">>$skillPoint<</replace>>
 			<<replace "#BXDW">>$BXDW<</replace>>
 		<</widget>>
-		<</nobr>>
-
-<!--对话分支按钮-->
+	/* #endregion */
+	<</nobr>>
+/* #endregion */
+	
+/* #region 对话分支按钮 */
 	<<widget dlg>><span id="brcs">\
 	/* 状态检查 */
 		\<<nobr>>
@@ -98,8 +104,9 @@
 			<p id="dlgp"><<include $args[1]>></p><</append>>
 		<<run window.scrollTo(0,document.body.scrollHeight)>>
 	<</linkreplace>></span><</widget>>
+/* #endregion */
 
-<!--继续按钮-->
+/* #region 继续按钮 */
 	<<widget ctn>><span id="brcs"><hr><<linkreplace "继续">>\
 	/* 状态检查 */
 	/*清空选项区域内容*/
@@ -111,8 +118,9 @@
 		<<append "#dlg" t8n>><p id="dlgp"><<include $args[0]>></p><</append>>
 		<<run window.scrollTo(0,document.body.scrollHeight)>>
 	<</linkreplace>></span><</widget>>
+/* #endregion */
 
-<!--身份操作-->
+/* #region 身份操作 */
 	<<widget playerIdentity>><<nobr>>
 		<<button $args[0]>>
 			<<if $playerIdentity.includes($args[0])>>
@@ -139,3 +147,4 @@
 			<</button>>
 		<</if>>
 	<</nobr>><</widget>>
+/* #endregion */
