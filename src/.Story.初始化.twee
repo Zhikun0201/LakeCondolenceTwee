@@ -51,6 +51,14 @@
 		Template.add('OCD', function(){
 			return "@@color:#FF9999;复读机@@ -"
 		})
+	/* 洞察之眼 */
+		Template.add('Eyes', function(){
+			return "@@color:#FF9999;洞察之眼@@ -"
+		})
+	/* 奇思妙想 */
+		Template.add('Imagination', function(){
+			return "@@color:#FF9999;奇思妙想@@ -"
+		})
 	<</script>>
 
 <!--技能点初始化-->
