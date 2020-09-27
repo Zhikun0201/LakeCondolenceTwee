@@ -6,7 +6,7 @@
 <<dlg "毫无特色，令人乏味。" "看起来没什么好值得关注的">>
 
 :: 看起来没什么好值得关注的
-?Censorship 没什么特别值得关注的。你的眼睛短暂合上，漆黑一片的脑海中只浮现出了两撇大胡子，左边一撇，右边一撇，毛茸茸，夹杂着零星发白的胡须。
+?Censorship 没什么特别值得关注的。你的眼睛短暂合上，漆黑一片的脑海里面只浮现出了两撇大胡子，左边一撇，右边一撇，毛茸茸，夹杂着零星发白的胡须。
 <<ctn "大胡子">>
 
 :: 大胡子
@@ -116,13 +116,10 @@
 /* #endregion */
 
 :: 那就叫……
-<<nobr>><<if _nickName != "我想不出来了">>
+<<nobr>>
 <<set $maWuyeNickName to _nickName>>
-?Logic 好的。从此以后，“<<= $maWuyeNickName>>”将成为你生命中的一部分，刻在你的真理之门上。
-<<else>>
-<<set $maWuyeNickName to _nickName>>\
-?Logic 这本身不是什么好名字，但只要你喜欢就好。从此以后，“<<= $maWuyeNickName>>”将成为你生命中的一部分，刻在你的真理之门上。每当你见到他时，你都要在心中复述一遍：“<<=$maWuyeNickName>>”。
-<</if>><</nobr>>
+?LCensorship <<if _nickName === "我想不出来了">>你的想象力也就到此为止了。<</if>>从此以后，“<<= $maWuyeNickName>>”将成为你生命中的一部分，刻在你的真理之门上。
+<</nobr>>
 
 /* #region 我真是个无聊的人 */
 /* #endregion */
