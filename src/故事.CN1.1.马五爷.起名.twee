@@ -85,7 +85,7 @@
 <<dlg "不行，再来一个" "更多的好名字7">>
 
 :: 更多的好名字7
-<<set _nickName to "马斯塔施">>\
+<<set _nickName to "希腊神祗">>\
 ?Imagination <<-_nickName>>？
 
 <<dlg "就这个了。" "那就叫……">>
