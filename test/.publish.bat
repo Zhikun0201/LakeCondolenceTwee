@@ -1,1 +1,3 @@
-tweego -o LC-normal.html "..\src"
+tweego -o LakeCondolence.html "..\src"
+cd
+start LakeCondolence.html
