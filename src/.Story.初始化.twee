@@ -29,7 +29,7 @@
         })
     /* 触觉 */
 		Template.add('Shivers', function () {
-			return "@@color:#FF6666;无形之触@@ -";
+			return "@@color:#FF6666;天人感应@@ -";
 		});
 	/* 审视之眼 */
 		Template.add('Censorship', function(){
@@ -37,15 +37,15 @@
 		}) 
 	/* 百科全书 */
 		Template.add('Encyclopedia', function(){
-			return "@@color:#3399FF;百科全书@@ -"
+			return "@@color:#3399FF;博学多闻@@ -"
 		})
 	/* 才思敏捷 */
 		Template.add('Logic', function(){
 			return "@@color:#CCCCFF;才思敏捷@@ -"
 		})
 	/* 远日留痕 */
-		Template.add('Remains',function(){
-			return "@@color:#FFCC99;远日留痕@@ -"
+		Template.add('Memories',function(){
+			return "@@color:#FFCC99;往日留痕@@ -"
 		})
 	/* 复读机 */
 		Template.add('OCD', function(){
@@ -58,6 +58,9 @@
 	/* 奇思妙想 */
 		Template.add('Imagination', function(){
 			return "@@color:#FF9999;奇思妙想@@ -"
+		})
+		Template.add('Empty', function(){
+			return "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
 		})
 	<</script>>
 
