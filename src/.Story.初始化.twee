@@ -29,7 +29,7 @@
         })
     /* 触觉 */
 		Template.add('Shivers', function () {
-			return "@@color:#FF6666;天人感应@@ -";
+			return "@@color:#A3D1FE;内观@@ -";
 		});
 	/* 审视之眼 */
 		Template.add('Censorship', function(){
